@@ -2,16 +2,58 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
+
+    <header id="logo_accidentes" class="accident">
+          <div class="title">
+              <p class="title_one">U.S. Transport Data</p>
+              <span class="subtitle">Statistical data on means of transport</span>
+            </div>   
+   </header>
+    
+<ul class="lu_drop">
+  <li class="dropdown">
+    <button class="dropbtn"><img class= "img_drop" src="../src\imagenes\icon_drop.png" alt="icon.png"><span class="btn_drop">Opciones</span></button>
+    <div class="dropdown-content">
+      <button id="total_urban" class="btn_dropdown">Transporte local</button>
+      <button id="total_carr" class="btn_dropdown">Transporte terrestre</button>  
+      <button id="total_air" class="btn_dropdown">Transporte aereo</button>  
+      <button id="total_ferr" class="btn_dropdown">Transporte ferroviario</button>  
+      <button id="total_water" class="btn_dropdown">Transporte maritimo</button>  
+      <button id="total_peat" class="btn_dropdown">Peatones</button> 
+      <button id="total_tec" class="btn_dropdown">Fallas tecnicas</button> 
+      <button id="total_labo" class="btn_dropdown">Accidentes laborales</button> 
+      <button id="total_otros" class="btn_dropdown">Otros accidentes</button> 
+    </div>
+  </li> 
+</ul>
+
+<div class="w3-content w3-section">
+    <img class="my_slides" src="../src\imagenes\accidentes\1.jpg" alt="accidente1.jpg">
+    <img class="my_slides" src="../src\imagenes\accidentes\2.jpg" alt="accidente2.jpg">
+    <img class="my_slides" src="../src\imagenes\accidentes\3.jpg" alt="accidente3.jpg">
+  </div>
+
+
+    <div class="inf_filter">
+      <ul id="root" class="root"></ul>
+      <ul id="carr" class="root"></ul>
+      <ul id="air" class="root"></ul>
+      <ul id="ferr" class="root"></ul>
+      <ul id="water" class="root"></ul>
+      <ul id="peat" class="root"></ul>
+      <ul id="tec" class="root"></ul>
+      <ul id="labo" class="root"></ul>
+      <ul id="otros" class="root"></ul>
+     </div>
+  
+    <script src="./data/injuries/injuries.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
