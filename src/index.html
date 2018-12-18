@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
+ <head>
+   <meta charset="utf-8">
+   <title>Data Lovers</title>
+   <link rel="stylesheet" href="style.css" />
+ </head>
+ <body>
+   <div>
+     <form action="">
+       <input type="text" id="input_buscar" placeholder = 'Buscar por años'>
+       <button id="enviar">Go</button>
+     </form>
+   </div>
+
+   <div class="btn_accordion">
+      <button id="tabla_general" class="urban_class"> Total de heridos por año</button>
+      <button id="total_air" class="urban_class"> Total de heridos por aire</button>
+   </div>
+
+   <div>
+     <ul id="root" class="root"></ul>
+     <ul id="air" class="root"></ul>
+   </div>
+
+<table id="tablegeneric">
+ <thead>
+   <tr>
+     <th> Años </th>
+     <th> Total de personas Heridas </th>
+     <th> Total de personas Heridas en accidentes de carro</th>
+   </tr>
+ </thead>
+<tbody>
+
+</tbody>
+
+</table>
+    <script src="./data/injuries/injuries.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>

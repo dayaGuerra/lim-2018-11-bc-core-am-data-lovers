@@ -1,0 +1,22 @@
+.root{
+   
+}
+
+.urban_class{
+    background-color: rgb(24, 77, 138);
+    color: whitesmoke;
+    border: none;
+    border-radius: 3px;
+    padding: 12px;
+    margin-top:5px;
+
+}
+
+.urban_class{
+    cursor: pointer;
+ 
+}
+
+tr, th, td {
+    text-align: center;
+}
