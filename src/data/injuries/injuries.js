@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var INJURIES = [
+=======
+const INJURIES = [
+>>>>>>> 411658c62132851991c326e6f763574371339bff
     {
     Total_Injured_Persons: null,
     Total_Injured_Persons_Air: null,
