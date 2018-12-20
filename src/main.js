@@ -1,47 +1,28 @@
-//slideshow automatic
-var myIndex = 0;
-carousel();
-
-function carousel() {
-   
-    const mySlides = document.getElementsByClassName("my_slides");
-    for (let i = 0; i < mySlides.length; i++) {
-       mySlides[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > mySlides.length) {myIndex = 1}    
-    mySlides[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 4000); // cambia cada 4 segundos.
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars 
+// 
+// const main = document.getElementById('main');
+// eslint-disable-next-line no-undef
+const newData = cambiarPropiedad(INJURIES);
+// console.log(newData);
+console.log(filtroUrbano(newData, 'Year'));*/
+const newData = cambiarPropiedad(INJURIES);
+const selectDocument = document.getElementById('select_year');
+const year = filtrarPropiedadEspecifica(newData, 'Year');
+const functionMain = () => {
+  const selectA = [];
+  let dataSelect = '';
+  // console.log(Year);
+  year.forEach(element => { 
+    selectA.push(`<option value = "${element}">${element}</option>`);
+  });
+  dataSelect = selectA.join('');
+  // console.log(dataSelect);
+  selectDocument.innerHTML = dataSelect;
+  return dataSelect;
 };
-
-//fin de slideshow automatic
-
-//inicio de botones - Filtrado por 9 categorias del dropdown
-
-
-const btnUrban = document.getElementById("total_urban");
-const btnAir = document.getElementById("total_air");
-
-
-
-//urbano
-btnUrban.addEventListener('click',() => {
-if (elemento.style.display === 'none') {
-elemento.style.display = 'block';
-airFilter.style.display = 'none';
-} 
-else {
-elemento.style.display = 'none';
-}
-});
-
-//aereo
-btnAir.addEventListener('click',() => {
-if (airFilter.style.display === 'none') {
-elemento.style.display = 'none'
-airFilter.style.display = 'block';
-} 
-else {
-airFilter.style.display = 'none';
-}
+functionMain();
+selectDocument.addEventListener('change', () => {
+  const kl = selectDocument.options[selectDocument.selectedIndex].value; const nj = recib(newData, kl);
+  console.log (nj);
 });
