@@ -1,8 +1,9 @@
 /* eslint-disable no-undef */
 // HTML - variables del DOM
 const selectDocumentYear = document.getElementById('select_year');
-// const selectDocumentMinYear = document.getElementById('select_minyear');
-// const selectDocumentMaxYear = document.getElementById('select_maxyear');
+const selectDocumentMinYear = document.getElementById('select_min_year');
+const selectDocumentMaxYear = document.getElementById('select_max_year');
+const btnMostrarAños = document.getElementById('btn_mostrar_años');
 
 // Data del archivo data.js
 /* Copia de la data Original*/
@@ -11,7 +12,7 @@ const years = filtrarPropiedadEspecifica(newData, 'Year'); // Array solo con los
 
 // DOM para mostrar data en pantalla
 const filterForYear = document.getElementById('filter_years');
-
+const filterForRang = document.getElementById('filter_rang');
 // Muestra años en las casillas del select con su respectivo valor.
 
 const mostrarCasillasEnSelect = (array) => {
@@ -21,7 +22,10 @@ const mostrarCasillasEnSelect = (array) => {
   }); 
   return recibirArreglo;
 };
+
 selectDocumentYear.innerHTML = mostrarCasillasEnSelect(years);
+selectDocumentMinYear.innerHTML = mostrarCasillasEnSelect(years);
+selectDocumentMaxYear.innerHTML = mostrarCasillasEnSelect(years);
 
 selectDocumentYear.addEventListener('change', (event) => {
   const result = filtro(newData, (parseInt(event.target.value)));
@@ -53,4 +57,24 @@ selectDocumentYear.addEventListener('change', (event) => {
   
   
   filterForYear.innerHTML = listarItems(result);
+});
+
+
+btnMostrarAños.addEventListener('click', (event) => {
+    const minYear = selectDocumentMinYear.value;
+    const maxYear = selectDocumentMaxYear.value;
+
+  const result = filtroMinMax(newData, event.target.minYear, event.target.maxYear);
+  const listarItems = (array) => {
+    let cadena = '';
+    array.forEach((obj) => { 
+      cadena += `<div> Peatones heridos: ${obj.Total_Injured_Persons_Pedestrians}</div>` ;
+    });
+    
+    return cadena;
+    console.log(cadena);
+  };
+  
+  
+  filterForRang.innerHTML = listarItems(result);
 });
