@@ -1,118 +1,28 @@
 
-const data = INJURIES;
-const elemento = document.getElementById("root");
-const airFilter = document.getElementById("air");
+// Copiar el objeto y cambiar los años a number antes : {Year: '1960-01-04'} / después : {Year: 1960}
+const cambiarPropiedad = (data) => { 
+  return data.map(obj => Object.assign({}, obj, { Year: (new Date(obj.Year).getFullYear())}));
+};
 
+// Funcion que toma propiedades especificas.
+const filtrarPropiedadEspecifica = (data, propiedad) => {
+  const newArr = data.map((obj) => {
+    return obj[propiedad];
+  });
+  return newArr;
+};
 
-//Urban
-function getFullName(item) {
-const fullname = [item.Year, item.Total_Injured_Persons].join(" | ");
-return fullname;
-}
-const vg =data.map(getFullName);
-for(let i = 0; i < vg.length; i++){
-elemento.innerHTML += `<li>Año: ${vg[i]}</li><br>`};
+// Muestra los datos del año seleccionado - requisito 1
+const filtro = (data, inputUser) => {
+  return data.filter((ele) => {
+    return ele.Year === parseInt(inputUser);
+  });
+};
 
-
-//Carretera
-function jojo(item,index) {
-const fullname = [item.Year, item.Total_Injured_Persons_Air].join(" | ");
-return fullname;
-}
-const airmostrar = document.getElementById("air");
-const vig =data.map(jojo);
-for(let i = 0; i < vig.length; i++){
-airmostrar.innerHTML += `<li>Año: ${vig[i]}</li><br>`};
-
-/*
-
-//Aire
-function jojo(item,index) {
-const fullname = [item.Year, item.Total_Injured_Persons_Air].join(" | ");
-return fullname;
-}
-const airmostrar = document.getElementById("air");
-const vig =data.map(jojo);
-for(let i = 0; i < vig.length; i++){
-airmostrar.innerHTML += `<li>Año: ${vig[i]}</li><br>`};
-
-
-//Ferrocarril
-function jojo(item,index) {
-const fullname = [item.Year, item.Total_Injured_Persons_Air].join(" | ");
-return fullname;
-}
-const airmostrar = document.getElementById("air");
-const vig =data.map(jojo);
-for(let i = 0; i < vig.length; i++){
-airmostrar.innerHTML += `<li>Año: ${vig[i]}</li><br>`};
-
-
-
-//Agua
-function jojo(item,index) {
-const fullname = [item.Year, item.Total_Injured_Persons_Air].join(" | ");
-return fullname;
-}
-const airmostrar = document.getElementById("air");
-const vig =data.map(jojo);
-for(let i = 0; i < vig.length; i++){
-airmostrar.innerHTML += `<li>Año: ${vig[i]}</li><br>`};
-
-
-
-//Peaton
-function jojo(item,index) {
-const fullname = [item.Year, item.Total_Injured_Persons_Air].join(" | ");
-return fullname;
-}
-const airmostrar = document.getElementById("air");
-const vig =data.map(jojo);
-for(let i = 0; i < vig.length; i++){
-airmostrar.innerHTML += `<li>Año: ${vig[i]}</li><br>`};
-
-
-
-//Falla Tecnica
-function jojo(item,index) {
-const fullname = [item.Year, item.Total_Injured_Persons_Air].join(" | ");
-return fullname;
-}
-const airmostrar = document.getElementById("air");
-const vig =data.map(jojo);
-for(let i = 0; i < vig.length; i++){
-airmostrar.innerHTML += `<li>Año: ${vig[i]}</li><br>`};
-
-
-
-//Laboral
-function jojo(item,index) {
-const fullname = [item.Year, item.Total_Injured_Persons_Air].join(" | ");
-return fullname;
-}
-const airmostrar = document.getElementById("air");
-const vig =data.map(jojo);
-for(let i = 0; i < vig.length; i++){
-airmostrar.innerHTML += `<li>Año: ${vig[i]}</li><br>`};
-
-
-
-//Otros Accidentes
-function jojo(item,index) {
-const fullname = [item.Year, item.Total_Injured_Persons_Air].join(" | ");
-return fullname;
-}
-const airmostrar = document.getElementById("air");
-const vig =data.map(jojo);
-for(let i = 0; i < vig.length; i++){
-airmostrar.innerHTML += `<li>Año: ${vig[i]}</li><br>`};
-
-
-*/
-
-
-
-
-
-
-window.INJURIES = INJURIES;
+window.injuries = {
+  
+  cambiarPropiedad,
+  filtrarPropiedadEspecifica,
+  filtro,
+  
+};
