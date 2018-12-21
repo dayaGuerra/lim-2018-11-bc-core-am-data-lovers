@@ -10,12 +10,45 @@
   </head>
   <body>
 
-    <header id="logo_accidentes" class="accident">
+   <!--  <header id="logo_accidentes" class="accident">
           <div class="title">
               <p class="title_one">U.S. Transport Data</p>
               <span class="subtitle">Statistical data on means of transport</span>
             </div>   
-   </header>
+   
+   <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Grafics</a></li>
+      <li><a href="#">informes</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>-->
+
+<main>
+  <form id="form_filter">
+    <div>
+        <span>Años a filtrar </span><select name="selecciona_año" id="select_year"></select>
+      
+    </div>
+    <div>
+        <span>De</span><select name="rango_a_mostrar" id="select_minyear"></select>
+        <span>Hasta</span> <select name="rango_a_mostrar" id="select_maxyear"></select>
+    </div>
+    <button id="btn_mostrar_años">Buscar</button>
+  </form>
+
+<div id="result_text">
+  <div id="tile_div"></div>
+  <div id="filter_years"></div>
+</div>
+
+</main>
+<!--
+<footer>
+  <p>Data EEUU transport Injuries</p>
+</footer>
     
 <ul class="lu_drop">
   <li class="dropdown">
@@ -51,7 +84,7 @@
       <ul id="tec" class="root"></ul>
       <ul id="labo" class="root"></ul>
       <ul id="otros" class="root"></ul>
-     </div>
+     </div>-->
   
     <script src="./data/injuries/injuries.js"></script>
     <script src="data.js"></script>
