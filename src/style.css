@@ -1,25 +1,22 @@
-<<<<<<< HEAD
 * {
   margin: 0 auto;
 
 }
+
 /*mostrar y ocultar pantallas*/
 .root{
 display:none;
 }
+
 div.title{
 text-align:center;
 margin-top:20px;
 margin-bottom: 5px;
 }
 p{
- 
-  font-size: 1.5em;
-   
+ font-size: 1.5em; 
 }
-span{
- 
-}
+
 /*dropdown - ordenar datos*/
 ul.lu_drop {
  
@@ -94,8 +91,44 @@ ul{
   max-height: 200px;
   border-block-end: solid #193557;
 }
+
+.container {
+  padding: 2%;
+  column-count: 2;
+  width: 60em;
+  height: 40em;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-year{
+  width: 25em;
+  height: 10em;
+  margin: 1%;
+}
+.prop-year {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0.1875rem 1.5rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.375rem;
+  overflow: hidden;
+  padding: 2%;
+  font-size: 14px;
+}
+
+h2.filter-year {
+  font-size: 40px;
+  padding-top: 10%;
+}
+
+.info {
+  color: rgb(243, 31, 84);
+}
+
+
 /*responsive*/
-@media screen and (min-width:500px) {
+@media screen and (max-width: 500px) {
  .dropdown-content{
      float:none; 
  }
@@ -117,8 +150,25 @@ li button:hover, .dropdown:hover {
 }
 img.my_slides{
   max-height: 250px;
-  
 }
+.container {
+  flex-flow: column nowrap;
+}
+
+.card-year{
+  width: 20em;
+  height: 10em;
+}
+
+.prop-year {
+  font-size: 10px;
+}
+
+h2.filter-year {
+  font-size: 20px;
+  padding-top: 10%;
+}
+
 }
 /*Inicio de card 
 - ver la manera de hacer un 
@@ -140,27 +190,3 @@ quiza con keys?
 - editar la tabla en css.
 - Hacer grafico facil con datos especificos - quiza año, total de heridos x año.
 */
-=======
-.root{
-   
-}
-
-.urban_class{
-    background-color: rgb(24, 77, 138);
-    color: whitesmoke;
-    border: none;
-    border-radius: 3px;
-    padding: 12px;
-    margin-top:5px;
-
-}
-
-.urban_class{
-    cursor: pointer;
- 
-}
-
-tr, th, td {
-    text-align: center;
-}
->>>>>>> 411658c62132851991c326e6f763574371339bff
