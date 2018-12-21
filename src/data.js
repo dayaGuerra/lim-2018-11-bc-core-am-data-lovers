@@ -19,10 +19,18 @@ const filtro = (data, inputUser) => {
   });
 };
 
+const filtroMinMax = (data, inputUser1, inputUser2) => {
+  return data.filter((ele) => {
+    return ele.Year >= parseInt(inputUser1) && ele.Year <= parseInt(inputUser2);
+  });
+};
+// console.log(filtroMinMax(cambiarPropiedad(INJURIES),1991,1995));
+
 window.injuries = {
   
   cambiarPropiedad,
   filtrarPropiedadEspecifica,
   filtro,
+  filtroMinMax,
   
 };
