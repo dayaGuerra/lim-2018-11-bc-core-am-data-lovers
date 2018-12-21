@@ -1,13 +1,10 @@
 * {
   margin: 0 auto;
-
 }
-
 /*mostrar y ocultar pantallas*/
 .root{
 display:none;
 }
-
 div.title{
 text-align:center;
 margin-top:20px;
@@ -16,7 +13,6 @@ margin-bottom: 5px;
 p{
  font-size: 1.5em; 
 }
-
 /*dropdown - ordenar datos*/
 ul.lu_drop {
  
@@ -32,11 +28,9 @@ ul.lu_drop{
 top: 0;
     width: 100%;
 }
-
 li {
   float: left;
 }
-
 li button, {
   display: inline-block;
   color: #ffffff;
@@ -45,24 +39,20 @@ li button, {
   width: 8em;
   text-decoration: none;
 }
-
 .dropbtn{
   outline: none;
   border:none;
   background-color: #193557;
 }
-
 li.dropdown {
   display: inline-block;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
   border-block-end-color: #ffffff;
   z-index: 1;
 }
-
 .dropdown-content button {
   color: black;
   padding: 12px;
@@ -72,13 +62,10 @@ li.dropdown {
   display: block;
   text-align: left;
 }
-
 .dropdown-content button:hover {background-color: #ffffff}
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 .btn_drop{
   display:none;
 }
@@ -91,7 +78,6 @@ ul{
   max-height: 200px;
   border-block-end: solid #193557;
 }
-
 .container {
   padding: 2%;
   column-count: 2;
@@ -116,17 +102,13 @@ ul{
   padding: 2%;
   font-size: 14px;
 }
-
 h2.filter-year {
   font-size: 40px;
   padding-top: 10%;
 }
-
 .info {
   color: rgb(243, 31, 84);
 }
-
-
 /*responsive*/
 @media screen and (max-width: 500px) {
  .dropdown-content{
@@ -154,39 +136,15 @@ img.my_slides{
 .container {
   flex-flow: column nowrap;
 }
-
 .card-year{
   width: 20em;
   height: 10em;
 }
-
 .prop-year {
   font-size: 10px;
 }
-
 h2.filter-year {
   font-size: 20px;
   padding-top: 10%;
 }
-
 }
-/*Inicio de card 
-- ver la manera de hacer un 
-template con los datos que ya se tiene - para los datos
-por boton de la hamburquesa.
--colocar el boton hamburguesa al lado derecho
-- activar boton para cerrar hamburguesa
-- simplificar el html.
--Quiero que mi codigo sea más funcional - repito mucho los filtrados.
-quiza una sola funcion que me permita hacer eso.
--colocar un select en la parte inferior del 
-slideshow con un boton de buscar.
--filtrar de mayor a menor
--ver la posibilidad de renombrar data (cómo?) 
-quiza con keys?
-- hacer el prototipado de alta fidelidad.
--editar el readme, ver ejemplos.
--Terminar la tabla y lograr que filtre datos por años.
-- editar la tabla en css.
-- Hacer grafico facil con datos especificos - quiza año, total de heridos x año.
-*/

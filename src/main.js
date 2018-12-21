@@ -1,53 +1,56 @@
-const newData = cambiarPropiedad(INJURIES);
-const selectDocument = document.getElementById('select_year');
-const year = filtrarPropiedadEspecifica(newData, 'Year');
-const functionMain = () => {
-  const selectA = [];
-  let dataSelect = '';
-  // console.log(Year);
-  year.forEach(element => { 
-    selectA.push(`<option value = "${element}">${element}</option>`);
-  });
-  dataSelect = selectA.join('');
-  // console.log(dataSelect);
-  selectDocument.innerHTML = dataSelect;
-  return dataSelect;
+/* eslint-disable no-undef */
+// HTML - variables del DOM
+const selectDocumentYear = document.getElementById('select_year');
+// const selectDocumentMinYear = document.getElementById('select_minyear');
+// const selectDocumentMaxYear = document.getElementById('select_maxyear');
+
+// Data del archivo data.js
+/* Copia de la data Original*/
+const newData = cambiarPropiedad(INJURIES); // array de objetoos
+const years = filtrarPropiedadEspecifica(newData, 'Year'); // Array solo con los valores de la propiedad Year
+
+// DOM para mostrar data en pantalla
+const filterForYear = document.getElementById('filter_years');
+
+// Muestra años en las casillas del select con su respectivo valor.
+
+const mostrarCasillasEnSelect = (array) => {
+  let recibirArreglo = '';
+  array.forEach((ele) => {
+    recibirArreglo += `<option value = "${ele}">${ele}</option>`;
+  }); 
+  return recibirArreglo;
 };
-functionMain();
-selectDocument.addEventListener('change', () => {
-  const kl = selectDocument.options[selectDocument.selectedIndex].value; const nj = recib(newData, kl);
-  console.log (nj);
-});
+selectDocumentYear.innerHTML = mostrarCasillasEnSelect(years);
 
-
-//TEMPLATES DE AÑOS
-
-const containerList = document.getElementById ("container-list")
-
-const tempYear = (list) => {
-    let templateListYears = "";
-    list.forEach((newData) => {
-        const blockYear = `
+selectDocumentYear.addEventListener('change', (event) => {
+  const result = filtro(newData, (parseInt(event.target.value)));
+  const listarItems = (array) => {
+    let cadena = '';
+    array.forEach((obj) => { 
+      cadena += `
         <div class = "card-year">
            <article class = "prop-year">
-            <h2 class = "filter-year">${newData.Year}</h2>
+            <h2 class = "filter-year">${obj.Year}</h2>
             <div class = "total-heridos-por-año"/>
-                <div> General por año: <span class="info"> ${newData.Total_Injured_Persons}</span></div>
-                <div> En aire: ${newData.Total_Injured_Persons_Air}</div>
-                <div> Ocupantes de bus: ${newData.Total_Injured_Persons_Bus_Occupants}</div>
-                <div> Personas lesionadas en carretera: ${newData.Total_Injured_Persons_Highwayr}</div>
-                <div> En motocicleta: ${newData.Total_Injured_Persons_Motorcyclists}</div>
-                <div> Ocupantes en automóviles: ${newData.Total_Injured_Persons_Passenger_Car_Occupants}</div>
-                <div> Pasajeros de automóviles: ${newData.Total_Injured_Persons_Passenger_Or_Occupant}</div>
-                <div> Peatones heridos: ${newData.Total_Injured_Persons_Pedestrians}</div>
-                <div> Personas lesionadas en aerolíneas de EEUU: ${newData.Total_Injured_Persons_US_Air_Carrier}</div>    
+                <div> General por año: <span class="info"> ${obj.Total_Injured_Persons}</span></div>
+                <div> En aire: ${obj.Total_Injured_Persons_Air}</div>
+                <div> Ocupantes de bus: ${obj.Total_Injured_Persons_Bus_Occupants}</div>
+                <div> Personas lesionadas en carretera: ${obj.Total_Injured_Persons_Highwayr}</div>
+                <div> En motocicleta: ${obj.Total_Injured_Persons_Motorcyclists}</div>
+                <div> Ocupantes en automóviles: ${obj.Total_Injured_Persons_Passenger_Car_Occupants}</div>
+                <div> Pasajeros de automóviles: ${obj.Total_Injured_Persons_Passenger_Or_Occupant}</div>
+                <div> Peatones heridos: ${obj.Total_Injured_Persons_Pedestrians}</div>
+                <div> Personas lesionadas en aerolíneas de EEUU: ${obj.Total_Injured_Persons_US_Air_Carrier}</div>    
             </div>
             </article>
         </div>
         `;
-        templateListYears += blockYear;
     });
-    containerList.innerHTML = templateListYears;
-}
-
-tempYear(newData);
+    
+    return cadena;
+  };
+  
+  
+  filterForYear.innerHTML = listarItems(result);
+});

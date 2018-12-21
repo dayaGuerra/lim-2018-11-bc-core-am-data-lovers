@@ -4,34 +4,52 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header id="logo_accidentes" class="accident">
+
+   <!--  <header id="logo_accidentes" class="accident">
           <div class="title">
               <p class="title_one">U.S. Transport Data</p>
               <span class="subtitle">Statistical data on means of transport</span>
             </div>   
-   </header>
-   <div>
-     <select name="select_year" id="select_year"></select>
-   </div>
    
-    <div id="container-list" class="container">
-      <!--   aqui va mi lista   -->
+   <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Grafics</a></li>
+      <li><a href="#">informes</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>-->
+
+<main>
+  <form id="form_filter">
+    <div>
+        <span>Años a filtrar </span><select name="selecciona_año" id="select_year"></select>
+      
     </div>
+    <div>
+        <span>De</span><select name="rango_a_mostrar" id="select_minyear"></select>
+        <span>Hasta</span> <select name="rango_a_mostrar" id="select_maxyear"></select>
+    </div>
+    <button id="btn_mostrar_años">Buscar</button>
+  </form>
 
-    <script src="./data/injuries/injuries.js"></script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
-</html>
+<div id="result_text">
+  <div id="tile_div"></div>
+  <div id="filter_years"></div>
+</div>
 
-
-
-
-    <!--
+</main>
+<!--
+<footer>
+  <p>Data EEUU transport Injuries</p>
+</footer>
+    
 <ul class="lu_drop">
   <li class="dropdown">
     <button class="dropbtn"><img class= "img_drop" src="../src\imagenes\icon_drop.png" alt="icon.png"><span class="btn_drop">Opciones</span></button>
@@ -48,11 +66,14 @@
     </div>
   </li> 
 </ul>
+
 <div class="w3-content w3-section">
     <img class="my_slides" src="../src\imagenes\accidentes\1.jpg" alt="accidente1.jpg">
     <img class="my_slides" src="../src\imagenes\accidentes\2.jpg" alt="accidente2.jpg">
     <img class="my_slides" src="../src\imagenes\accidentes\3.jpg" alt="accidente3.jpg">
   </div>
+
+
     <div class="inf_filter">
       <ul id="root" class="root"></ul>
       <ul id="carr" class="root"></ul>
@@ -64,3 +85,9 @@
       <ul id="labo" class="root"></ul>
       <ul id="otros" class="root"></ul>
      </div>-->
+  
+    <script src="./data/injuries/injuries.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
