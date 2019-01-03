@@ -1,4 +1,3 @@
-
 // Copiar el objeto y cambiar los años a number antes : {Year: '1960-01-04'} / después : {Year: 1960}
 const cambiarPropiedad = (data) => { 
   return data.map(obj => Object.assign({}, obj, { Year: (new Date(obj.Year).getFullYear())}));
@@ -14,15 +13,21 @@ const filtrarPropiedadEspecifica = (data, propiedad) => {
 
 // Muestra los datos del año seleccionado - requisito 1
 const filtro = (data, inputUser) => {
+  document.getElementById('page_one').style.display = 'none';
   return data.filter((ele) => {
     return ele.Year === parseInt(inputUser);
   });
 };
 
+const filtroMinMax = (data, inputUser1, inputUser2) => {
+  return data.filter((ele) => {
+    return ele.Year >= parseInt(inputUser1) && ele.Year <= parseInt(inputUser2);
+  });
+};
+
 window.injuries = {
-  
   cambiarPropiedad,
   filtrarPropiedadEspecifica,
   filtro,
-  
+  filtroMinMax,  
 };
