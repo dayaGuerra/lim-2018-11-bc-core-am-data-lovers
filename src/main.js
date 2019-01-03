@@ -45,8 +45,8 @@ const filterForRang = document.getElementById('filter_rang');
 // Data del archivo data.js
 
 /* Copia de la data Original*/
-const newData = window.cambiarPropiedad(INJURIES); // array de objetoos
-const years = window.filtrarPropiedadEspecifica(newData, 'Year');
+const newData = cambiarPropiedad(INJURIES); // array de objetoos
+const years = filtrarPropiedadEspecifica(newData, 'Year');
 
 // Funcion para mostrar cartas solo con los valores de la propiedad Year
 const listarItems = (obje, dive) => {
@@ -88,7 +88,7 @@ selectDocumentMaxYear.innerHTML = mostrarCasillasEnSelect(years);
 
  
 selectDocumentYear.addEventListener('change', (event) => {
-  const result = window.filtro(newData, (parseInt(event.target.value)));
+  const result = filtro(newData, (parseInt(event.target.value)));
   result.innerHTML = listarItems(result, filterForYear);
 }); 
 
@@ -98,7 +98,7 @@ btnMostrarAños.addEventListener('click', () => {
   const minYear = selectDocumentMinYear.value;
   const maxYear = selectDocumentMaxYear.value;
   
-  const respt = window.filtroMinMax(newData, minYear, maxYear);
+  const respt = filtroMinMax(newData, minYear, maxYear);
   respt.innerHTML = listarItems(respt, filterForRang);
 });
 
