@@ -25,9 +25,31 @@ const filtroMinMax = (data, inputUser1, inputUser2) => {
   });
 };
 
+// Función ordenar por año de forma ascendente y descentente
+
+const sorts = (data, inputUser) => {
+  const data2 = data.slice(0, data.lenght);
+  data2.sort((year1, year2) => {
+    if (year1.Year > year2.Year) {
+      return 1;
+    }
+    if (year1.Year < year2.Year) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
+
+  if (inputUser === 'falling') {
+    data2.reverse();
+  }
+  return data2;
+};
+
 window.injuries = {
   cambiarPropiedad,
   filtrarPropiedadEspecifica,
   filtro,
-  filtroMinMax,  
+  filtroMinMax,
+  sorts, 
 };
