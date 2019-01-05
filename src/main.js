@@ -20,7 +20,6 @@ const showSlides = () => {
 };
 
 showSlides();
-
 const openNav = document.getElementById('open_nav');
 openNav.addEventListener('click', () => {
   document.getElementById('mySidenav').style.width = '250px';
@@ -30,7 +29,6 @@ const closeNav = document.getElementById('close_nav');
 closeNav.addEventListener('click', () => {
   document.getElementById('mySidenav').style.width = '0';
 });
-
 
 // Variables para jalar los id del HTML
 const selectDocumentYear = document.getElementById('select_year');
@@ -42,6 +40,10 @@ const btnMostrarCalculo = document.getElementById('btn_mostrar_calculo');
 const filterForYear = document.getElementById('filter_years');
 const filterForRang = document.getElementById('filter_rang');
 const calculo = document.getElementById('calculo');
+
+// DOM para mostrar data en pantalla
+const filterForYear = document.getElementById('filter_years');
+const filterForRang = document.getElementById('filter_rang');
 
 // Data del archivo data.js
 
@@ -88,6 +90,9 @@ const denullacero = (data) => {
   });
 };
 
+// mostrar años en las casillas de select
+/* se puede colocar un if para quq solo exista
+una funcion que muestre la misma data*/
 const mostrarCasillasEnSelect = (array) => {
   let recibirArreglo = '';
   array.forEach((ele) => {
@@ -100,6 +105,7 @@ selectDocumentYear.innerHTML = mostrarCasillasEnSelect(years);
 selectDocumentMinYear.innerHTML = mostrarCasillasEnSelect(years);
 selectDocumentMaxYear.innerHTML = mostrarCasillasEnSelect(years);
 
+ 
 selectDocumentYear.addEventListener('change', (event) => {
   let result = INJURIES.filtro(newData, (parseInt(event.target.value)));
   let resultCero = denullacero(result);

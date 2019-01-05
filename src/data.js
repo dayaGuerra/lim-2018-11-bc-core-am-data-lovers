@@ -2,6 +2,9 @@
 const cambiarPropiedad = (data) => { 
   return data.map(obj => Object.assign({}, obj, { Year: (new Date(obj.Year).getFullYear())}));
 };
+console.log(cambiarPropiedad(INJURIES));
+console.log(INJURIES)
+
 
 // Funcion que toma propiedades especificas.
 const filtrarPropiedadEspecifica = (data, propiedad) => {
@@ -37,6 +40,7 @@ const calcular = (data) => {
 window.injuries = {
   cambiarPropiedad,
   filtrarPropiedadEspecifica,
+  filtrarPropiedad,
   filtro,
   filtroMinMax,  
   calcular,
