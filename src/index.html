@@ -7,13 +7,6 @@
     <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
     
     <link rel="stylesheet" href="style.css" />
-<<<<<<< HEAD
-   
-  
-  
-  <body>
-  <header>
-=======
     
   </head>
   
@@ -24,7 +17,6 @@
     <header>
         <div class="title">   
           <img src="imagenes/Logo_USAGov.png" width="150" alt="">
->>>>>>> 0639ba1c9207e61a3c557a4cf3ff21bab6267d80
           <a href="#">U.S. Injuries Data Portal</a>
         </div>   
         
@@ -37,45 +29,26 @@
                     <li><span>De</span><select name="rango_a_mostrar" id="select_min_year"></select>
                         <span>Hasta</span> <select name="rango_a_mostrar" id="select_max_year"></select></li>
                     <li><button id="btn_mostrar_años">Buscar</button></li>
-                    <li><span>Ordenar por:</span><select name="order" id="order"></select></li>
+                    <li><span>Ordenar por:</span>
+                        <select id="order"> 
+                          <option>Escoge una opción</option>
+                          <option value="upward">Ascendente</option>
+                          <option value="falling">Descendente</option>
+                        </select></li>
                     <li><span>Calcular por:</span><select name="calc" id="calc"></select></li>
                 </ul>
             </div>
         </nav>
         
         <div class ="icons"> 
-<<<<<<< HEAD
-            <div class="icon_menu"><span id="open_nav"><img src="imagenes/menu-button-of-three-horizontal-lines.png" alt="menu"></span></div>
-        </div>   
-</header>
-
-<section class="main">
-    
-<div id="page_one">
-
-    <div class="slides">
-        <div class="mySlides fade">
-            <img src="../src\imagenes\accidentes\1.jpg" style="width:100%" alt="accidente3">
-        </div>
-          
-        <div class="mySlides fade">
-           <img src="../src\imagenes\accidentes\2.jpg" style="width:100%" alt="accidente2">
-        </div>
-
-        <div class="mySlides fade">
-            <img src="../src\imagenes\accidentes\3.jpg" style="width:100%" alt="accidente1">
-=======
             <div class="icon_home"><span><img src="imagenes/home.png"></span></div> 
             <div class="icon_menu"><span id="open_nav"><img src="imagenes/menu-button-of-three-horizontal-lines.png"></span></div>
         </div>   
 </header>
-
 <section class="main">
     
 <div id="page_one">
-
     <img class="page_one_portable" src="imagenes/Transportation Data Portal.png">
-
     <div class="slides">
         <div class="mySlides fade">
             <img src="../src\imagenes\accidentes\1.jpg" style="width:100%">
@@ -84,10 +57,8 @@
         <div class="mySlides fade">
            <img src="../src\imagenes\accidentes\2.jpg" style="width:100%">
         </div>
-
         <div class="mySlides fade">
             <img src="../src\imagenes\accidentes\3.jpg" style="width:100%">
->>>>>>> 0639ba1c9207e61a3c557a4cf3ff21bab6267d80
         </div>
     
         <div style="text-align:center">
@@ -103,25 +74,15 @@
         Especialmente en este modo de transporte, es importante observar que Estados computan todas las muertes atribuibles al accidente que ocurren dentro de los 30 días de sucedido éste.</p> 
         <p> <b>Transporte por agua:</b> Los datos de Estados Unidos no son comparables en varios aspectos. </p>
     </article>
-    </div> 
+   
 </div>
-
-<<<<<<< HEAD
 <div class="item1" id="filter_rang"></div>
 <div class="item1" id="filter_years"></div>
-<div class="item1" id="calculo"></div>
-=======
-<div class = "group_data_filter">
-<div class="item1" id="filter_rang">
-</div>
-<div class="item1" id="filter_years"></div>
-</div>
->>>>>>> 0639ba1c9207e61a3c557a4cf3ff21bab6267d80
-</section>
 
+<div class="item1" id="calulo"></div>
+</section>
 <footer>
   <h4>Data EEUU transport Injuries</h4>
-
   <div class="social">
     <a href="#">FB</a>
     <a href="#">TW</a>
