@@ -1,150 +1,295 @@
 * {
-  margin: 0 auto;
-}
-/*mostrar y ocultar pantallas*/
-.root{
-display:none;
-}
-div.title{
-text-align:center;
-margin-top:20px;
-margin-bottom: 5px;
-}
-p{
- font-size: 1.5em; 
-}
-/*dropdown - ordenar datos*/
-ul.lu_drop {
- 
-  background-color:  #193557;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-      
+  box-sizing: border-box;
 }
-ul.lu_drop{
-   
-   
-top: 0;
-    width: 100%;
-}
-li {
-  float: left;
-}
-li button, {
-  display: inline-block;
-  color: #ffffff;
-  text-align: center;
-  padding: 14px 16px;
-  width: 8em;
-  text-decoration: none;
-}
-.dropbtn{
-  outline: none;
-  border:none;
-  background-color: #193557;
-}
-li.dropdown {
-  display: inline-block;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  border-block-end-color: #ffffff;
-  z-index: 1;
-}
-.dropdown-content button {
-  color: black;
-  padding: 12px;
-  text-decoration: none;
-  width: 12em;
-  border: none;
-  display: block;
-  text-align: left;
-}
-.dropdown-content button:hover {background-color: #ffffff}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-.btn_drop{
-  display:none;
-}
-ul{
-  list-style-type: none;
-}
-.my_slides{
-  opacity: #ffffff;
+ 
+.conteiner{
+  background:#0B0B3B;
   width: 100%;
-  max-height: 200px;
-  border-block-end: solid #193557;
+  max-width: 100%;
+  margin: auto;
+
+  /* Flex */
+  display: flex;
+  flex-flow: row wrap;
 }
-.container {
+
+.usa {
+  display: flex;
+  font-size: 0.8em;
+  align-items: center;
+  }
+
+.usa img {
+  padding: 0.2em;
+  margin-right: 0.4em;
+}
+
+header {
+  height: 10em;
+  width: 100%;
+  padding: 5%;
+
+  /*Flex*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+header .title img {
+  width: 100px;
+  vertical-align: top;
+}
+
+header .title a{
+  color: #ffffff;
+  font-size: 1.5em; 
+  text-decoration: none;
+  line-height: 75px;
+}
+
+.main {
+  background: #ffffff;
   padding: 2%;
-  column-count: 2;
-  width: 60em;
-  height: 40em;
+  flex: 1 1 70%;
+}
+
+.main form {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  
+}
+
+.page_one_portable {
+  display: none;
+}
+
+footer {
+  background: #042042d5;
+  width: 100%;
+  padding: 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer .social {
+  background: rgb(93, 93, 236);
   display: flex;
   flex-wrap: wrap;
 }
-.card-year{
-  width: 25em;
-  height: 10em;
-  margin: 1%;
+
+footer h4 {
+  color: #ffffff;
+  font-size: 1em;
+  align-self: center; 
 }
-.prop-year {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0.1875rem 1.5rem rgba(0, 0, 0, 0.2);
-  border-radius: 0.375rem;
-  overflow: hidden;
+
+footer a {
+  flex-grow: 1;
+
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+footer a:hover {
+  background: rgb(5, 5, 95);
+}
+
+span {
+  padding: 10px;
+}
+
+
+.introduction {
+  font-style: inherit; 
+  font-size: 1.1em; 
   padding: 2%;
-  font-size: 14px;
+  text-align: justify;
 }
-h2.filter-year {
-  font-size: 40px;
-  padding-top: 10%;
+p {
+  padding: 1%;
 }
-.info {
-  color: rgb(243, 31, 84);
+
+.icons{
+  display: flex;
+  justify-content: flex-end;
 }
-/*responsive*/
-@media screen and (max-width: 500px) {
- .dropdown-content{
-     float:none; 
- }
- .img_drop{
-  display:none;
+
+.icon_home {
+  display: flex;
+  margin: 0;
+  
 }
-.btn_drop{
-display:block;
+
+.icon_menu {
+  display: flex;
+  margin: 0;
 }
-.dropbtn{
- padding: 12px;
- color: #ffffff;
- background-color: #0a203b;
- border-right: 1px solid #bbb;
- cursor: pointer;
+
+
+/* SLIDES */
+.slides {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
-li button:hover, .dropdown:hover {
-  background-color: #383d42;
+
+.mySlides {
+   width: 50%;
 }
-img.my_slides{
-  max-height: 250px;
+
+/* FIN SLIDES */
+
+
+/* Style the search box */
+.mysearch {
+width: 100%;
+font-size: 18px;
+padding: 11px;
+border:1px solid #ddd;
 }
-.container {
-  flex-flow: column nowrap;
+
+.myul{
+list-style-type: none;
+padding: 0;
+margin: 0;
 }
+
+.title_sidenav{
+position: absolute;
+top:10px;
+padding: 10px;
+font-size:14px;
+color: #767676;
+border-bottom: 3px solid #767676;
+}
+
+.sidenav {
+height: 100%;
+width: 0;
+position: fixed;
+z-index: 1;
+top: 0;
+right: 0;
+background-color: #ffffff;
+overflow-x: hidden;
+transition: 0.5s;
+padding-top: 60px;
+}
+
+ul.myul li{
+text-decoration: none;
+list-style-type: none;
+margin-top: 2em;
+}
+
+.sidenav  a.list{
+padding: 15px;
+text-decoration: none;
+color: #767676;
+display: block;
+transition: 0.3s;
+border-bottom: 0.5px solid #767676;
+}
+
+.sidenav a:hover {
+font-weight:80px;
+color: #0071bc;
+border-left: 3px solid #0071bc;
+}
+
+.closebtn {
+position: absolute;
+color: #767676;
+top: 0;
+right: 30px;
+font-size: 36px;
+margin-left: 50px;
+}
+
+.closebtn:hover{
+background-color: #0071bc;
+}
+
+/*Fin navigation bar scroll*/
+
+/*Inicio de cartas template*/
+.item1{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+  }
+
 .card-year{
-  width: 20em;
-  height: 10em;
+  padding: 2em;
+  width: 30em;
+}
+.group{
+  font-size: 1.4em;
+  border-bottom: 1px solid #bcbcbc;
+ 
 }
 .prop-year {
-  font-size: 10px;
+border: 1px solid #797878cc;
+border-radius: 0.375rem;
+padding: 2%;
+overflow: auto;
 }
-h2.filter-year {
-  font-size: 20px;
-  padding-top: 10%;
+.filter-year{
+  font-size: 25px;
+  border-bottom: 4px solid #bcbcbc;
 }
+.info{
+  align-content: flex-end;
+
+
+}
+/*Fin de cartas template*/
+
+
+/*------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 600px) {
+   
+  header {
+    width: 100%;
+    padding: 5%;
+    height: 10em;
+  }
+
+  header .title a{
+    color: #ffffff;
+    font-size: 1em; 
+    text-decoration: none;
+  }
+
+  .slides {
+    display: none;
+  }
+
+  .page_one_portable {
+    display: block;
+    width: 100%;
+  }
+
+  .icons{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .icon_home {
+    display: flex;
+    margin: 0;
+  }
+
+  .icon_menu {
+    display: flex;
+    margin: 0;
+  }
 }
