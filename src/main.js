@@ -74,7 +74,7 @@ const listarItems = (obje, dive) => {
   dive.innerHTML = cadena;
 };
 
-
+// convertir datos null a 0
 const denullacero = (data) => { 
   return data.map(element => {
     const keys = Object.keys(element);
