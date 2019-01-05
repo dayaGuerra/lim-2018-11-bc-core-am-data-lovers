@@ -13,7 +13,6 @@ const filtrarPropiedadEspecifica = (data, propiedad) => {
 
 // Muestra los datos del año seleccionado - requisito 1
 const filtro = (data, inputUser) => {
-  document.getElementById('page_one').style.display = 'none';
   return data.filter((ele) => {
     return ele.Year === parseInt(inputUser);
   });
@@ -39,7 +38,6 @@ const sorts = (data, inputUser) => {
     // a must be equal to b
     return 0;
   });
-
   if (inputUser === 'falling') {
     data2.reverse();
   }
