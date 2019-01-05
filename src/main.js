@@ -93,6 +93,8 @@ selectDocumentMaxYear.innerHTML = mostrarCasillasEnSelect(years);
 // Mostrar cartas según la selección ingresada por el usuario
 
 selectDocumentYear.addEventListener('change', (event) => {
+  document.getElementById('page_one').style.display = 'none';
+  document.getElementById('page_two').style.display = 'block';
   const result = injuries.filtro(newData, (parseInt(event.target.value)));
   result.innerHTML = listarItems(result, filterForYear);
 }); 
@@ -100,10 +102,12 @@ selectDocumentYear.addEventListener('change', (event) => {
 // Botón que muestra el resultado de los dos valores que el usuario ha ingresado
 
 btnMostrarAños.addEventListener('click', () => {
-  document.getElementById('page_one').style.display = 'none';
   const minYear = selectDocumentMinYear.value;
   const maxYear = selectDocumentMaxYear.value;
   
+  document.getElementById('page_two').style.display = 'block';
+  document.getElementById('page_three').style.display = 'none';
+
   const respt = injuries.filtroMinMax(newData, minYear, maxYear);
   respt.innerHTML = listarItems(respt, filterForRang);
 });
@@ -114,6 +118,9 @@ selectDocumentMaxYear.innerHTML = mostrarCasillasEnSelect(years);
 // Función para ordenar los datos por años y mostrarlos en pantalla
 
 selectDocumentOrder.addEventListener('click', () => {
+  document.getElementById('page_two').style.display = 'block';
+  document.getElementById('page_four').style.display = 'none';
+  
   const yearOrder = injuries.sorts(newData, event.target.value);
   listarItems(yearOrder, orderYear);
 });
