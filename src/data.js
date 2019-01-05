@@ -1,3 +1,58 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Copiar el objeto y cambiar los años a number antes : {Year: '1960-01-04'} / después : {Year: 1960}
 const cambiarPropiedad = (data) => {
   return data.map(obj => Object.assign({}, obj, { Year: (new Date(obj.Year).getFullYear())}));
@@ -42,6 +97,6 @@ window.injuries = {
   filtrarPropiedadEspecifica,
   filtro,
   filtroMinMax,
-  calular,
+  calcular,
 
 };
