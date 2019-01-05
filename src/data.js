@@ -24,6 +24,15 @@ const filtroMinMax = (data, inputUser1, inputUser2) => {
   });
 };
 
+// funcion reduce
+
+const calcular = (data) => {
+  const arrCa = data.reduce((total, num) => {
+    return total + num;
+  }, 0);
+  return arrCa;
+};
+
 // Función ordenar por año de forma ascendente y descentente
 
 const sorts = (data, inputUser) => {
@@ -49,5 +58,6 @@ window.injuries = {
   filtrarPropiedadEspecifica,
   filtro,
   filtroMinMax,
-  sorts, 
+  calcular,
+  sorts,
 };

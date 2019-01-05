@@ -39,12 +39,15 @@ const selectDocumentYear = document.getElementById('select_year');
 const selectDocumentMinYear = document.getElementById('select_min_year');
 const selectDocumentMaxYear = document.getElementById('select_max_year');
 const btnMostrarAños = document.getElementById('btn_mostrar_años');
+const btnMostrarCalculo = document.getElementById('btn_mostrar_calculo');
 const selectDocumentOrder = document.getElementById('order');
 
 // DOM para mostrar data en pantalla
 const filterForYear = document.getElementById('filter_years');
 const filterForRang = document.getElementById('filter_rang');
 const orderYear = document.getElementById('order_years');
+const calculo = document.getElementById('calculo');
+
 
 // Data del archivo data.js
 
@@ -61,21 +64,35 @@ const listarItems = (obje, dive) => {
     <article class = "prop-year">
      <h2 class = "filter-year">${obj.Year}</h2>
      <div/>
-         <div class = "group"> General por año: <span class="info"> ${obj.Total_Injured_Persons + (0)}</span></div>
-         <div class = "group"> En aire:<span class="info"> ${obj.Total_Injured_Persons_Air + (0)}</span></div>
-         <div class = "group"> Ocupantes de bus: <span class="info">${obj.Total_Injured_Persons_Bus_Occupants + (0)}</span></div>
-         <div class = "group"> Personas lesionadas en carretera:<span class="info"> ${obj.Total_Injured_Persons_Highway + (0)}</span></div>
-         <div class = "group"> En motocicleta:<span class="info"> ${obj.Total_Injured_Persons_Motorcyclists + (0)}</span></div>
-         <div class = "group"> Ocupantes en automóviles:<span class="info"> ${obj.Total_Injured_Persons_Passenger_Car_Occupants + (0)}</span></div>
-         <div class = "group"> Pasajeros de automóviles:<span class="info"> ${obj.Total_Injured_Persons_Passenger_Or_Occupant + (0)}</span></div>
-         <div class = "group"> Peatones heridos:<span class="info">${obj.Total_Injured_Persons_Pedestrians + (0)}</span></div>
-         <div class = "group"> Personas lesionadas en aerolíneas de EEUU: <span class="info">${obj.Total_Injured_Persons_US_Air_Carrier + (0)}</span></div>
+         <div class = "group"> General por año: <span class="info"> ${obj.Total_Injured_Persons}</span></div>
+         <div class = "group"> En aire:<span class="info"> ${obj.Total_Injured_Persons_Air}</span></div>
+         <div class = "group"> Ocupantes de bus: <span class="info">${obj.Total_Injured_Persons_Bus_Occupants}</span></div>
+         <div class = "group"> Personas lesionadas en carretera:<span class="info"> ${obj.Total_Injured_Persons_Highway}</span></div>
+         <div class = "group"> En motocicleta:<span class="info"> ${obj.Total_Injured_Persons_Motorcyclists}</span></div>
+         <div class = "group"> Ocupantes en automóviles:<span class="info"> ${obj.Total_Injured_Persons_Passenger_Car_Occupants}</span></div>
+         <div class = "group"> Pasajeros de automóviles:<span class="info"> ${obj.Total_Injured_Persons_Passenger_Or_Occupant}</span></div>
+         <div class = "group"> Peatones heridos:<span class="info">${obj.Total_Injured_Persons_Pedestrians}</span></div>
+         <div class = "group"> Personas lesionadas en aerolíneas de EEUU: <span class="info">${obj.Total_Injured_Persons_US_Air_Carrier}</span></div>
      </div>
      </article>
  </div>
     `;
   });
   dive.innerHTML = cadena;
+};
+
+// convertir datos null a 0
+const denullacero = (data) => { 
+  return data.map(element => {
+    const keys = Object.keys(element);
+    let aRetornar = Object.assign({}, element);
+    keys.forEach(key => {
+      if (element[key] === null) {
+        aRetornar[key] = 0;
+      }
+    });
+    return aRetornar;
+  });
 };
 
 // Funcion para mostrar los años en el select
@@ -91,36 +108,35 @@ selectDocumentMinYear.innerHTML = mostrarCasillasEnSelect(years);
 selectDocumentMaxYear.innerHTML = mostrarCasillasEnSelect(years);
 
 // Mostrar cartas según la selección ingresada por el usuario
-
+ 
 selectDocumentYear.addEventListener('change', (event) => {
-  document.getElementById('page_one').style.display = 'none';
-  document.getElementById('page_two').style.display = 'block';
-  const result = injuries.filtro(newData, (parseInt(event.target.value)));
-  result.innerHTML = listarItems(result, filterForYear);
+  let result = injuries.filtro(newData, (parseInt(event.target.value)));
+  let resultCero = denullacero(result);
+  listarItems(resultCero, filterForYear);
 }); 
-
-// Botón que muestra el resultado de los dos valores que el usuario ha ingresado
-
+ 
 btnMostrarAños.addEventListener('click', () => {
-  const minYear = selectDocumentMinYear.value;
-  const maxYear = selectDocumentMaxYear.value;
-  
-  document.getElementById('page_two').style.display = 'block';
-  document.getElementById('page_three').style.display = 'none';
-
-  const respt = injuries.filtroMinMax(newData, minYear, maxYear);
-  respt.innerHTML = listarItems(respt, filterForRang);
+  document.getElementById('page_one').style.display = 'none';
+  let minYear = selectDocumentMinYear.value;
+  let maxYear = selectDocumentMaxYear.value;
+  let respt = injuries.filtroMinMax(newData, minYear, maxYear);
+  let resultS = denullacero(respt);
+  listarItems(resultS, filterForRang);
 });
 
-selectDocumentMinYear.innerHTML = mostrarCasillasEnSelect(years);
-selectDocumentMaxYear.innerHTML = mostrarCasillasEnSelect(years);
+// btnMostrarCalculo.addEventListener('click', () => {
+//   let minY = selectDocumentMinYear.value;
+//   let maxY = selectDocumentMaxYear.value;
+//  // let resptet = funcion de reduce 
+
+//   let resultSx = denullacero(respt);
+//   listarItems(resultSx, calculo);
+// });
 
 // Función para ordenar los datos por años y mostrarlos en pantalla
 
 selectDocumentOrder.addEventListener('click', () => {
   document.getElementById('page_two').style.display = 'block';
-  document.getElementById('page_four').style.display = 'none';
-  
   const yearOrder = injuries.sorts(newData, event.target.value);
   listarItems(yearOrder, orderYear);
 });
