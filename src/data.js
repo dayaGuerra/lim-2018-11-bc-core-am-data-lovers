@@ -25,6 +25,7 @@ const filtroMinMax = (data, inputUser1, inputUser2) => {
     return ele.Year >= parseInt(inputUser1) && ele.Year <= parseInt(inputUser2);
   });
 };
+// funcion reduce
 const calcular = (data) => {
   const arrCa = data.reduce((total, num) => {
 
