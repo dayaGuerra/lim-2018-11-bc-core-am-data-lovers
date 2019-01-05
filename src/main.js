@@ -1,3 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Slideshow automatic
 let slideIndex = 0;
 const showSlides = () => {
@@ -41,15 +185,11 @@ const filterForYear = document.getElementById('filter_years');
 const filterForRang = document.getElementById('filter_rang');
 const calculo = document.getElementById('calculo');
 
-// DOM para mostrar data en pantalla
-const filterForYear = document.getElementById('filter_years');
-const filterForRang = document.getElementById('filter_rang');
-
 // Data del archivo data.js
 
 /* Copia de la data Original*/
-const newData = INJURIES.cambiarPropiedad(INJURIES); // array de objetoos
-const years = INJURIES.filtrarPropiedadEspecifica(newData, 'Year');
+const newData = injuries.cambiarPropiedad(INJURIES); // array de objetoos
+const years = injuries.filtrarPropiedadEspecifica(newData, 'Year');
 // Funcion para mostrar cartas solo con los valores de la propiedad Year
 const listarItems = (obje, dive) => {
   let cadena = '';
@@ -107,7 +247,7 @@ selectDocumentMaxYear.innerHTML = mostrarCasillasEnSelect(years);
 
  
 selectDocumentYear.addEventListener('change', (event) => {
-  let result = INJURIES.filtro(newData, (parseInt(event.target.value)));
+  let result = injuries.filtro(newData, (parseInt(event.target.value)));
   let resultCero = denullacero(result);
   listarItems(resultCero, filterForYear);
 }); 
@@ -116,16 +256,16 @@ btnMostrarAños.addEventListener('click', () => {
   document.getElementById('page_one').style.display = 'none';
   let minYear = selectDocumentMinYear.value;
   let maxYear = selectDocumentMaxYear.value;
-  let respt = INJURIES.filtroMinMax(newData, minYear, maxYear);
+  let respt = injuries.filtroMinMax(newData, minYear, maxYear);
   let resultS = denullacero(respt);
   listarItems(resultS, filterForRang);
 });
 
-btnMostrarCalculo.addEventListener('click', () => {
-  let minY = selectDocumentMinYear.value;
-  let maxY = selectDocumentMaxYear.value;
- // let resptet = funcion de reduce 
+// btnMostrarCalculo.addEventListener('click', () => {
+//   let minY = selectDocumentMinYear.value;
+//   let maxY = selectDocumentMaxYear.value;
+//  // let resptet = funcion de reduce 
 
-  let resultSx = denullacero(respt);
-  listarItems(resultSx, calculo);
-});
+//   let resultSx = denullacero(respt);
+//   listarItems(resultSx, calculo);
+// });
