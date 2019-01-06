@@ -3,16 +3,11 @@
 ## Índice
 
 * [Introducción](#introducción)
-* [Descripción](#resumen-del-proyecto)
-* [Consideraciones generales](#consideraciones-generales)
-* [Objetivos de aprendizaje](#objetivos-de-aprendizaje)
-* [Parte obligatoria](#parte-obligatoria)
-* [Parte opcional](#parte-opcional-hacker-edition)
-* [Consideraciones técnicas](#consideraciones-técnicas)
-* [Primeros pasos](#primeros-pasos)
-* [Contenido de referencia](#contenido-de-referencia)
-* [Checklist](#checklist)
-
+* [Definición del Producto](#Definición-del-Producto)
+* [Historias de usuario](#Historias-de-usuario)
+* [Prototipos](#Prototipos)
+* [Tests de usabilidad](#Tests-de-usabilidad)
+* [Información adicional sobre el proyecto](#Información-adicional-sobre-el-proyecto)
 
 ***
 
@@ -22,7 +17,7 @@ En la actualidad, muchas personas sufren accidentes en diferentes puntos de un m
 
 ## Definición del Producto
 
-Esta web ha sido desarrollada para mostrar la información solciitada por nuestros usuarios, que permitirá mostrar la información más relevante sobre el número de personas accidentadas en difirentes tipos de medios de tranporte en los Estados Unidos.
+Esta web ha sido desarrollada para mostrar la información solcitada por nuestros usuarios, que permitirá mostrar la información más relevante sobre el número de personas accidentadas en difirentes tipos de medios de tranporte en los Estados Unidos.
 
 Cuenta con filtros que permitirán al usuario señalar el tipo de año o el rango de años específico a mostrar en pantalla. Asimismo cuenta con menú de selección que brindará al usuario la experiencia de poder ordenar de forma ascendente o descendente. Finalmente el usuario podrá mostrar la suma total de Heridos en accidentes.
 
@@ -40,9 +35,9 @@ Las entrevistas al detalle podrán ser revisadas al final de este documento [Ane
 
 En base a eso destacamos las siguientes historias de usuario:
 
-###### Mi usuario desea poder visualizar la cantidad de heridos por accidentes por años (Año en específico o rango de años)    
-###### Mi usuario desea poder visualizar la informacion ordenada de por los últimos o primeros años registrados.   
-###### Mi usuario desea poder visualizar el número de total de accidentados durante todos los años registrados.    
+##### Mi usuario desea poder visualizar la cantidad de heridos por accidentes por años (Año en específico o rango de años)    
+##### Mi usuario desea poder visualizar la informacion ordenada de por los últimos o primeros años registrados.   
+##### Mi usuario desea poder visualizar el número de total de accidentados durante todos los años registrados.    
 
 ## Prototipos
 
@@ -56,7 +51,11 @@ Después del primer testeo entre algunos de nuestros usuarios nos dimos cuenta q
 ![Imagen3](src/imagenes/Readme/PRTBF1v2.jpg)
 ![Imagen4](src/imagenes/Readme/PRTBF2v2.jpg)
 
-En base a este diseño empezamos a diseñar nuestro HTML con algunas cosas básicas, pero mediante transcurria el proceso,solicitamos feedback a usuarios y compañeras de clase, lo que nos permitió corregir los errores pertinentes y terminar con esta versión del prototipo.   
+En base a este diseño empezamos a diseñar nuestro HTML con algunas cosas básicas, pero mediante transcurria el proceso,solicitamos feedback a usuarios y compañeras de clase, lo que nos permitió corregir los errores pertinentes y terminar con esta versión del prototipo, teniendo en cuenta los tamaños de pantallas que deseabamos armar de tal manera que fueran de tipo responsive.
+
+### Tamaños de pantallas
+
+![Imagen](src/imagenes/Readme/Tamaño.jpg)
 
 Diseño de Escritorio
 ====================
@@ -81,11 +80,36 @@ En el trascurso de la primera y segunda semana del inicio del proyecto se fue ar
 ![Imagen14](src/imagenes/Readme/Figma3v1.ip.JPG)
 ![Imagen15](src/imagenes/Readme/Figma4v1.ip.JPG)
 
-Quedando como resultado final para el proyecto las siguientes imagenes:
-
-DAYAAAAAAAAAAAAAAAAAA
+Quedando como resultado final para el proyecto las siguientes imagenes:     
 
 
+
+
+Asimismo se trabajo con el programa Zeplin a fin de obtener mejores resultados entre el diseño y la programación:    
+
+[Zeplin Proyecto](http://www.limni.net)
+
+## Tests de usabilidad     
+
+Nuestros usuarios al probar nuestra aplicación detectaron los siguientes problemas:     
+
+1. El menú de navegación no es óptimo ya que todo está en un solo lado.
+2. Debería de poder filtrar por algún campo específico y no solo por años.
+3. La web debería de poder mostrar gráficos estadísticos que permita ser más visible la información.
+4. Debería de tener un botón de refrescar página para que se pueda borrar el contenido anterior.
+
+## Información adicional sobre el proyecto
+
+Cabe resaltar que para integrar toda esta información del proyecto se realizó un trabajo previo de investigación sobre los accidentes de EEUU en la que se puede apreciar que el más alto índice de accidentes se presenta en las carreteras y siendo el medio de transporte más seguro los aviones.
+
+Asimismo se pudo evidenciar a que a diferencia del Perú nuestros usuarios requieren de una aplicación que interacctue con un mapa que pueda mostrar y registrar estadísticas de accidentes en carretera en determinados puntos de nuestra capital, a fin ellos puedan manejar con más precaución.
+
+
+
+
+
+
+***
 
 ### Anexo
 
@@ -104,7 +128,7 @@ Daya:
 
 Fernando:   
   
-Me gustaría que fuera de manera gráfica, como un adicional al waze, que salga como una “Atención en tal cruce hay un alto índice de accidentes”. Claro que no sé como podrías sacar ese índice en porcentajes y de que tipo son. Por ejemplo “Accidente por no ver semáforo 60%” o “Atropello 30%”, habría que definir este tipo de accidentes, porque uno no puede englobar un todo.   
+Me gustaría que fuera de manera gráfica, como un adicional al waze, que salga como una “Atención en tal cruce hay un alto índice de accidentes”. Claro que no sé como podrías sacar ese índice en porcentajes y de que tipo son. Por  jemplo “Accidente por no ver semáforo 60%” o “Atropello 30%”, habría que definir este tipo de accidentes, porque uno no puede englobar un todo.   
 
 #### Entrevista N°2   
 Nombre: Claudia   
@@ -114,7 +138,7 @@ Daya:
 
 Te cuento lo que sucede entonces, estoy armando una app que busca mostrar los índices de heridos en accidentes de medios de transporte. ¿Quisiera saber qué es lo que le gustaría ver en esa app primero? ¿Qué dato le parecería más interesante?  
 
-Claudia Beltran:   
+Claudia:   
 
 En primer lugar saber qué medios de transporte existen costos, rutas, nivel de seguridad en cada uno de ellos. Recomendaciones para un mejor uso de cada alternativa de transporte. Ej. Si es transporte en taxi: recomendar empresas registradas, llamar con anticipación No sé si te estoy ayudando o enredando 🙈  
 
