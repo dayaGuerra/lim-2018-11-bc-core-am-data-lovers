@@ -48,7 +48,7 @@ En base a eso destacamos las siguientes historias de usuario:
 
 En base a las historias de usuarios creamos un primer prototipo de baja fidelidad que nos mostraba lo siguiente:
 
-![Imagen1](imagenes/Readme/PRTBF1v1.jpg)
+![Imagen1](src/imagenes/Readme/PRTBF1v1.jpg)
 
 
 
