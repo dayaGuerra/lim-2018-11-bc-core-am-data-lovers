@@ -46,9 +46,44 @@ En base a eso destacamos las siguientes historias de usuario:
 
 ## Prototipos
 
-En base a las historias de usuarios creamos un primer prototipo de baja fidelidad que nos mostraba lo siguiente:
+En base a las historias de usuarios creamos un primer prototipo de baja fidelidad que nos mostraba lo siguiente:    
 
 ![Imagen1](src/imagenes/Readme/PRTBF1v1.jpg)
+![Imagen2](src/imagenes/Readme/PRTBF2v1.jpg)
+
+Después del primer testeo entre algunos de nuestros usuarios nos dimos cuenta que lo que ellos solicitaban no estaba de acuerdo a lo que nosotros inicialmente habíamos planteado, por lo que surgió un segundo diseño de baja fidelidad que mostraba lo siguiente:    
+
+![Imagen3](src/imagenes/Readme/PRTBF1v2.jpg)
+![Imagen4](src/imagenes/Readme/PRTBF2v2.jpg)
+
+En base a este diseño empezamos a diseñar nuestro HTML con algunas cosas básicas, pero mediante transcurria el proceso,solicitamos feedback a usuarios y compañeras de clase, lo que nos permitió corregir los errores pertinentes y terminar con esta versión del prototipo.   
+
+Diseño de Escritorio
+====================
+
+![Imagen5](src/imagenes/Readme/PRTBF1v3.jpg)
+![Imagen6](src/imagenes/Readme/PRTBF2v3.jpg)
+![Imagen7](src/imagenes/Readme/PRTBF3v3.jpg)
+![Imagen8](src/imagenes/Readme/PRTBF4v3.jpg)
+
+Diseño de Movil
+================
+
+![Imagen9](src/imagenes/Readme/PRTBF1v3mb.jpg)
+![Imagen10](src/imagenes/Readme/PRTBF2v3mb.jpg)
+![Imagen11](src/imagenes/Readme/PRTBF3v3mb.jpg)
+
+
+En el trascurso de la primera y segunda semana del inicio del proyecto se fue armando la primera versión de la aplicación en FIGMA, que nos permitió tener una vista más visual de lo que se quería conseguir, lastimosamente no fue lo solicitado por el usuario por lo que tuvimos que descartar parte de este diseño y armar la versión 3 de baja fidelidad.
+
+![Imagen12](src/imagenes/Readme/Figma1v1.ip.jpg)
+![Imagen13](src/imagenes/Readme/Figma2v1.ip.jpg)
+![Imagen14](src/imagenes/Readme/Figma3v1.ip.jpg)
+![Imagen15](src/imagenes/Readme/Figma4v1.ip.jpg)
+
+Quedando como resultado final para el proyecto las siguientes imagenes:
+
+DAYAAAAAAAAAAAAAAAAAA
 
 
 
