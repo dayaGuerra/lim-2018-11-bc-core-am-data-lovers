@@ -28,16 +28,16 @@ Para definir las historias de nuestros usuarios, procedimos a definir un grupo d
 Al realizar las entrevistas con nuestros usuarios nos dimos cuenta que esta información no era la más adecuada para ellos, ya que nuestros entrevistados solicitaban otro tipo de información, pero tratamos de rescatar lo más resaltante de esto, como por ejemplo:
 
 > "Cómo es el cambio de la cantidad de accidentes a través de los años" - José - 31 años   
-> "Me gustaría poder conocer cual es el mayor número de accidentes en alguna área o medio en específico" - José Coronel - 42 años   
+> "Me gustaría poder conocer cual es el mayor número de accidentes en alguna área o medio en específico" - José     Coronel - 42 años   
 > "Me gustaría ver una pantalla con muchos botones, que no tenga que escribir mucho ya que si voy en el auto y me estaciono a un lado no puedo perder mucho tiempo - Marilú - 40 años   
 
 Las entrevistas al detalle podrán ser revisadas al final de este documento [Anexo](#anexo)
 
 En base a eso destacamos las siguientes historias de usuario:
 
-##### Mi usuario desea poder visualizar la cantidad de heridos por accidentes por años (Año en específico o rango de años)    
-##### Mi usuario desea poder visualizar la informacion ordenada de por los últimos o primeros años registrados.   
-##### Mi usuario desea poder visualizar el número de total de accidentados durante todos los años registrados.    
+### - Mi usuario desea poder visualizar la cantidad de heridos por accidentes por años (Año en específico o rango de años)    
+### - Mi usuario desea poder visualizar la informacion ordenada de por los últimos o primeros años registrados.   
+### - Mi usuario desea poder visualizar el número de total de accidentados durante todos los años registrados.    
 
 ## Prototipos
 
@@ -51,7 +51,7 @@ Después del primer testeo entre algunos de nuestros usuarios nos dimos cuenta q
 ![Imagen3](src/imagenes/Readme/PRTBF1v2.jpg)
 ![Imagen4](src/imagenes/Readme/PRTBF2v2.jpg)
 
-En base a este diseño empezamos a diseñar nuestro HTML con algunas cosas básicas, pero mediante transcurria el proceso,solicitamos feedback a usuarios y compañeras de clase, lo que nos permitió corregir los errores pertinentes y terminar con esta versión del prototipo, teniendo en cuenta los tamaños de pantallas que deseabamos armar de tal manera que fueran de tipo responsive.
+En base a este diseño empezamos a diseñar nuestro HTML con algunas cosas básicas, pero mediante transcurria el proceso, solicitamos feedback a usuarios y compañeras de clase, lo que nos permitió corregir los errores pertinentes y terminar con esta versión del prototipo, teniendo en cuenta los tamaños de pantallas que deseabamos armar de tal manera que fueran de tipo responsive.
 
 ### Tamaños de pantallas
 
