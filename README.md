@@ -76,10 +76,10 @@ Diseño de Movil
 
 En el trascurso de la primera y segunda semana del inicio del proyecto se fue armando la primera versión de la aplicación en FIGMA, que nos permitió tener una vista más visual de lo que se quería conseguir, lastimosamente no fue lo solicitado por el usuario por lo que tuvimos que descartar parte de este diseño y armar la versión 3 de baja fidelidad.
 
-![Imagen12](src/imagenes/Readme/Figma1v1.ip.jpg)
-![Imagen13](src/imagenes/Readme/Figma2v1.ip.jpg)
-![Imagen14](src/imagenes/Readme/Figma3v1.ip.jpg)
-![Imagen15](src/imagenes/Readme/Figma4v1.ip.jpg)
+![Imagen12](src/imagenes/Readme/Figma1v1.ip.JPG)
+![Imagen13](src/imagenes/Readme/Figma2v1.ip.JPG)
+![Imagen14](src/imagenes/Readme/Figma3v1.ip.JPG)
+![Imagen15](src/imagenes/Readme/Figma4v1.ip.JPG)
 
 Quedando como resultado final para el proyecto las siguientes imagenes:
 
