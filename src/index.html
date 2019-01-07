@@ -22,20 +22,22 @@
         
         <nav class="navbar dropdown">
             <div id="mySidenav" class="sidenav">
-                    <!-- <input type="text" id="mysearch" class="mysearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category"> -->
                 <a class="closebtn" id="close_nav">&times;</a>
                 <ul id="myul" class="myul">
-                    <li><span>Años a filtrar </span> <select name="selecciona_año" id="select_year"></select></li>
-                    <li><span>De</span><select name="rango_a_mostrar" id="select_min_year"></select>
-                        <span>Hasta</span> <select name="rango_a_mostrar" id="select_max_year"></select></li>
-                    <li><button id="btn_mostrar_años">Buscar</button></li>
+                    <li><span>Años a filtrar </span> <select  id="select_year"><option>Escoga el año</option></select></li>
+                    <li><span>De</span><select  id="select_min_year"></select>
+                        <span>Hasta</span> <select  id="select_max_year"></select></li>
+                    <li><button id="btn_show_year"> Buscar</button></li>
                     <li><span>Ordenar por:</span>
                         <select id="order"> 
                           <option>Escoge una opción</option>
                           <option value="upward">Ascendente</option>
                           <option value="falling">Descendente</option>
                         </select></li>
-                    <li><span>Calcular por:</span><select name="calc" id="calc"></select></li>
+                        <li><span>Calcular por:</span><select name="calc" id="calc">
+                            <option>Escoge una opción</option>
+                            <option value="Total_Injured_Persons">Suma total</option>
+                        </select></li>
                 </ul>
             </div>
         </nav>
@@ -50,7 +52,7 @@
     
 <div id="page_one">
 
-    <img class="page_one_portable" src="imagenes/Transportation Data Portal.png">
+    <img class="page_one_portable"  src="imagenes/Transportation Data Portal.png">
 
     <div class="slides">
         <div class="mySlides fade">
@@ -81,21 +83,36 @@
    
 </div>
 
-<div id="page_two">
+<div id="page_two" class="pages"> 
     <div class="item1" id="filter_rang"></div>
 </div>
 
-<div id="page_three">
+<div id="page_three" class="pages">
     <div class="item1" id="filter_years"></div>
 </div>
 
-<div id="page_four">
+<div id="page_four" class="pages">
     <div class="item1" id="order_years"></div>
 </div>
 
-<div id="page_five">
-    <div class="item1" id="calcular"></div>
+<div id="page_five" class="pages">
+    <table id="table1">
+            <tr>
+            <th>Año</th>
+            <th>Cantidad</th>
+            </tr>
+            <tbody id="calculate_years">
+            </tbody>
+            <tfoot>
+                <tr>
+                  <th>Totales</th>
+                  <td id ="calculate_total"></td>
+                </tr>
+              </tfoot>
+
+          </table>
 </div>
+<div id="pagesnull"></div>
 
 </section>
 

@@ -38,25 +38,27 @@ closeNav.addEventListener('click', () => {
 const selectDocumentYear = document.getElementById('select_year');
 const selectDocumentMinYear = document.getElementById('select_min_year');
 const selectDocumentMaxYear = document.getElementById('select_max_year');
-const btnMostrarAños = document.getElementById('btn_mostrar_años');
-const btnMostrarCalculo = document.getElementById('btn_mostrar_calculo');
+const btnShowYear = document.getElementById('btn_show_year');
 const selectDocumentOrder = document.getElementById('order');
+const computeStatsTotal = document.getElementById('computeStats_total');
+const selectDocumentCalculo = document.getElementById('calc');
+
 
 // DOM para mostrar data en pantalla
-const filterForYear = document.getElementById('filter_years');
-const filterForRang = document.getElementById('filter_rang');
+const filterForYear = document.getElementById('filter_rang');
+const filterForRang = document.getElementById('filter_years');
 const orderYear = document.getElementById('order_years');
-const calculo = document.getElementById('calculo');
+const viewYearsCol = document.getElementById('computeStats_years');
 
 
 // Data del archivo data.js
 
 /* Copia de la data Original*/
-const newData = injuries.cambiarPropiedad(INJURIES); // array de objetoos
-const years = injuries.filtrarPropiedadEspecifica(newData, 'Year');
+const newData = injuries.changeProperty(INJURIES); // array de objetoos
+const years = injuries.filterData(newData, 'Year');
 
 // Funcion para mostrar cartas solo con los valores de la propiedad Year
-const listarItems = (obje, dive) => {
+const listitems = (obje, dive) => {
   let cadena = '';
   
   obje.forEach((obj) => { 
@@ -81,62 +83,77 @@ const listarItems = (obje, dive) => {
   dive.innerHTML = cadena;
 };
 
-// convertir datos null a 0
-const denullacero = (data) => { 
-  return data.map(element => {
-    const keys = Object.keys(element);
-    let aRetornar = Object.assign({}, element);
-    keys.forEach(key => {
-      if (element[key] === null) {
-        aRetornar[key] = 0;
-      }
-    });
-    return aRetornar;
+// Template para colocar la tabla de cálculo
+
+const tableCalculate = (objeto, dive) => {
+  let result = '';
+  const nullDataZero = injuries.nulltozero(newData);
+  nullDataZero.forEach((obj) => { 
+    result += `
+   <tr>
+     <td>${obj.Year}</td>
+     <td> ${obj.Total_Injured_Persons}</td>
+   </tr>
+    `;
   });
+  dive.innerHTML = result;
 };
 
 // Funcion para mostrar los años en el select
-const mostrarCasillasEnSelect = (array) => {
+const showCasillasInSelect = (array) => {
   let recibirArreglo = '';
   array.forEach((ele) => {
     recibirArreglo += `<option value = "${ele}">${ele}</option>`;
   }); 
   return recibirArreglo;   
 };
-selectDocumentYear.innerHTML = mostrarCasillasEnSelect(years);
-selectDocumentMinYear.innerHTML = mostrarCasillasEnSelect(years);
-selectDocumentMaxYear.innerHTML = mostrarCasillasEnSelect(years);
+selectDocumentYear.innerHTML = showCasillasInSelect(years);
+selectDocumentMinYear.innerHTML = showCasillasInSelect(years);
+selectDocumentMaxYear.innerHTML = showCasillasInSelect(years);
 
 // Mostrar cartas según la selección ingresada por el usuario
  
 selectDocumentYear.addEventListener('change', (event) => {
-  let result = injuries.filtro(newData, (parseInt(event.target.value)));
-  let resultCero = denullacero(result);
-  listarItems(resultCero, filterForYear);
-}); 
- 
-btnMostrarAños.addEventListener('click', () => {
   document.getElementById('page_one').style.display = 'none';
+  document.getElementById('page_two').style.display = 'block';
+  
+  let result = injuries.strainer(newData, (parseInt(event.target.value)));
+  let resultCero = injuries.nulltozero(result);
+  listitems(resultCero, filterForYear);
+}); 
+
+// Función para mostrar en pantalla el filtro por rango de años
+
+btnShowYear.addEventListener('click', () => {
+  document.getElementById('page_one').style.display = 'none';
+  document.getElementById('page_three').style.display = 'block';
+  
   let minYear = selectDocumentMinYear.value;
   let maxYear = selectDocumentMaxYear.value;
-  let respt = injuries.filtroMinMax(newData, minYear, maxYear);
-  let resultS = denullacero(respt);
-  listarItems(resultS, filterForRang);
+  let respt = injuries.filterMinMax(newData, minYear, maxYear);
+  let resultS = injuries.nulltozero(respt);
+  listitems(resultS, filterForRang);
 });
-
-// btnMostrarCalculo.addEventListener('click', () => {
-//   let minY = selectDocumentMinYear.value;
-//   let maxY = selectDocumentMaxYear.value;
-//  // let resptet = funcion de reduce 
-
-//   let resultSx = denullacero(respt);
-//   listarItems(resultSx, calculo);
-// });
 
 // Función para ordenar los datos por años y mostrarlos en pantalla
 
-selectDocumentOrder.addEventListener('click', () => {
-  document.getElementById('page_two').style.display = 'block';
-  const yearOrder = injuries.sorts(newData, event.target.value);
-  listarItems(yearOrder, orderYear);
+selectDocumentOrder.addEventListener('change', () => {
+  document.getElementById('page_one').style.display = 'none';
+  document.getElementById('page_four').style.display = 'block';
+
+  const yearOrder = injuries.sortData(newData, event.target.value);
+  const yearOrderzero = injuries.nulltozero(yearOrder);
+  listitems(yearOrderzero, orderYear);
+});
+
+// Función para realizar la suma total de personas heridas
+
+selectDocumentCalculo.addEventListener('change', () => {
+  document.getElementById('page_one').style.display = 'none';
+  document.getElementById('page_five').style.display = 'block';
+  
+  const injuriesTotal = injuries.filterData(newData, event.target.value);
+  const computeStatsDataSum = injuries.computeStats(injuriesTotal);
+  tableCalculate(computeStatsDataSum, viewYearsCol);
+  computeStatsTotal.innerHTML = computeStatsDataSum;
 });

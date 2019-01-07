@@ -254,14 +254,27 @@ overflow: auto;
 
 /*Fin de cartas template*/
 
-/* Ocultar páginas */
+/*tabla*/
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
 
-.page_two {
-  display: 'none';
 }
 
-.page_three {
-  display: 'none';
+table {
+  border-collapse: collapse;
+  width: 60%;
+}
+
+th, td {
+  padding: 15px;
+}
+/*Fin de css tabla*/
+
+/* Ocultar páginas */
+
+.pages  {
+  display: none;
 }
 /* FIN Ocultar páginas */
 

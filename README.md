@@ -35,9 +35,9 @@ Las entrevistas al detalle podrán ser revisadas al final de este documento [Ane
 
 En base a eso destacamos las siguientes historias de usuario:
 
-### - Mi usuario desea poder visualizar la cantidad de heridos por accidentes por años (Año en específico o rango de años)    
-### - Mi usuario desea poder visualizar la informacion ordenada de por los últimos o primeros años registrados.   
-### - Mi usuario desea poder visualizar el número de total de accidentados durante todos los años registrados.    
+#### - Mi usuario desea poder visualizar la cantidad de heridos por accidentes por años (Año en específico o rango de años)    
+#### - Mi usuario desea poder visualizar la informacion ordenada de por los últimos o primeros años registrados.   
+#### - Mi usuario desea poder visualizar el número de total de accidentados durante todos los años registrados.    
 
 ## Prototipos
 
