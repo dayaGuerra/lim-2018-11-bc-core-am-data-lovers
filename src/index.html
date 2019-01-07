@@ -1,115 +1,158 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Heridos en Accidentes</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
-    
-    <link rel="stylesheet" href="style.css" />
-    
-  </head>
+    <html lang="es">
+        <head>
+        <title>Heridos en Accidentes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <link rel="stylesheet" href="style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+        </head>
   
-  <body>
-    <div class="usa"><img src="imagenes/united-states-of-america.png">An official website of the United States government</div>
-    
-    <div class="conteiner">
-    <header>
-        <div class="title">   
-          <img src="imagenes/Logo_USAGov.png" width="150" alt="">
-          <a href="#">U.S. Injuries Data Portal</a>
-        </div>   
-        
-        <nav class="navbar dropdown">
-            <div id="mySidenav" class="sidenav">
-                    <!-- <input type="text" id="mysearch" class="mysearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category"> -->
-                <a class="closebtn" id="close_nav">&times;</a>
-                <ul id="myul" class="myul">
-                    <li><span>Años a filtrar </span> <select name="selecciona_año" id="select_year"></select></li>
-                    <li><span>De</span><select name="rango_a_mostrar" id="select_min_year"></select>
-                        <span>Hasta</span> <select name="rango_a_mostrar" id="select_max_year"></select></li>
-                    <li><button id="btn_mostrar_años">Buscar</button></li>
-                    <li><span>Ordenar por:</span><select name="order" id="order"></select></li>
-                    <li><span>Calcular por:</span><select name="calc" id="calc"></select></li>
-                </ul>
-            </div>
-        </nav>
-        
-        <div class ="icons"> 
-            <div class="icon_home"><span><img src="imagenes/home.png"></span></div> 
-            <div class="icon_menu"><span id="open_nav"><img src="imagenes/menu-button-of-three-horizontal-lines.png"></span></div>
-        </div>   
+<body>
+
+<div class="usa-banner">
+<header class="usa-banner-header header">
+<div class="usa-grid usa-banner-inner">
+<img src="imagenes/united-states-of-america.png" alt="U.S. flag">
+<span>An official website of the United States government</span>
+</div>
 </header>
+</div>
+<header>
+<div class="title">   
+        <img src="imagenes/logo_USAGov.png" width="150" alt="">
+        <a class="title_header" href="#">U.S. Injuries Data Portal</a>
+        
+</div>  
+</header>       
+<div class="row">
 
-<section class="main">
     
-<div id="page_one">
+        <div class="col-3 col-s-3 menu">
+          <div class="tab">
+            <a href= "#graficos" id="button_graficos">Graficos</a>
+            
+            <a href= "#page_five" id="calc">Calculo total</a>
+            <a target="_blank" href= "https://www.usa.gov/" id="button_descargar">Más información</a>
+           
 
-    <img class="page_one_portable" src="imagenes/Transportation Data Portal.png">
-
-    <div class="slides">
-        <div class="mySlides fade">
-            <img src="../src\imagenes\accidentes\1.jpg" style="width:100%">
-        </div>
-          
-        <div class="mySlides fade">
-           <img src="../src\imagenes\accidentes\2.jpg" style="width:100%">
+            </div> 
         </div>
 
-        <div class="mySlides fade">
-            <img src="../src\imagenes\accidentes\3.jpg" style="width:100%">
+
+            <div class="col-6 col-s-9 paragraph_desktop" id="home_text_1">
+                    <h1>Personas heridas en U.S.</h1>
+                    <p> Para Estados Unidos, el número total de muertes es inferior a la suma de las muertes indicada para cada modo de transporte porque algunas muertes se contaron en más de un modo; es decir que dicho país corrigió la doble contabilización al calcular el total de muertes.</p>
+                    <h3>Transporte aéreo:</h3> 
+                    <p>Los datos de Estados Unidos incluyen las muertes en accidentes tanto de vuelos de pasajeros como de vuelos exclusivamente de carga, los datos de aviación comercial se refieren a muertes en accidentes de compañías aéreas nacionales tanto en vuelos domésticos como vuelos internacionales. </p> 
+                    <h3>Trasporte carretero:</h3> 
+                    <p>Los datos se refieren a ocupantes de vehículos automotores de la lista. El rubro “Otros” comprende usuarios de bicicletas y otros medios no motorizados (excepto peatones, que figuran aparte), y ocupantes de otros vehículos automotores o de clase desconocida. </p>
+                    <p>Especialmente en este modo de transporte, es importante observar que Estados computan todas las muertes atribuibles al accidente que ocurren dentro de los 30 días de sucedido éste.</p> 
+                    <h3>Transporte por agua:</h3>
+                     <p> Los datos de Estados Unidos no son comparables en varios aspectos. </p>
+                    </div>
+            
+                <div class="col-6 col-s-9 paragraph" id="home_text_2">
+                    <h1>Personas heridas en U.S.</h1>
+                    <p>En la actualidad, muchas personas sufren accidentes en diferentes medios de transporte.</p>
+                    <p>Este registro data desde 1960 al 2016, la cual almacena el número de personas heridas en algún medio de trasporte</p>
+                    <p>o actividades que tengan que ver con este sector.</p>
+                </div>
+
+
+                <div id = "graficos" class="col-6 col-s-9" style="display:none;overflow: visible;">
+                        <div class="btn-group">
+                        <ul id="list_property" style="text-align: center"></ul>
+                        </div>
+                     
+                        <div id="piechart" class="googleCharts" style="width:100%; text-align: center !important"></div>
+                </div>
+
+
+
+               
+
+                      
+
+                <div class="col-3 col-s-3 menu">
+                <div class="tab">
+                        <a id="mostrar_filtros" href= "#filtros">Filtros</a>
+                </div>
+            </div>
+            <div id = "filtros" class="filters" style="display:none">
+                    <div>
+                       <ul id="myul" class="myul">
+                          <li><span class="title_filter">Filtrar por años</span> <select name="selecciona_año" id="select_year"></select></li>
+                          <li><span class="title_filter">Rango de años</span></li>
+                          <li><span>De</span><select name="rango_a_mostrar" id="select_min_year"></select>
+                              <span>Hasta</span> <select name="rango_a_mostrar" id="select_max_year"></select></li>
+                              <li><button id="btn_mostrar_años">Buscar</button></li>
+                          <li><span class="title_filter">Ordenar por:</span></li>
+                             <li><select id="order">
+                                <option>Escoge una opción</option>
+                                <option value="upward">Ascendente</option>
+                                <option value="falling">Descendente</option>
+                              </select></li>
+                          
+                      </ul>
+                  </div>
+              
+                  </div>
+
+           
+
+            <div id="page_five" class="page_five_class" >
+                    <table>
+                        <thead></thead>
+                            <tr>
+                            <th>Año</th>
+                            <th>Cantidad</th>
+                            </tr>
+                            <tbody id="calculate_years">
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                  <th>Totales</th>
+                                  <td id = "calculate_total"></td>
+                                </tr>
+                              </tfoot>
+                
+                          </table>
+                </div>
+
         </div>
     
-        <div style="text-align:center">
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-        </div>
-    </div>
-    <article class="introduction">
-        <p> Para Estados Unidos, el número total de muertes es inferior a la suma de las muertes indicada para cada modo de transporte porque algunas muertes se contaron en más de un modo; es decir que dicho país corrigió la doble contabilización al calcular el total de muertes.</p>
-        <p> <b>Transporte aéreo:</b> Los datos de Estados Unidos incluyen las muertes en accidentes tanto de vuelos de pasajeros como de vuelos exclusivamente de carga, los datos de aviación comercial se refieren a muertes en accidentes de compañías aéreas nacionales tanto en vuelos domésticos como vuelos internacionales. </p> 
-        <p> <b>Trasporte carretero:</b> Los datos se refieren a ocupantes de vehículos automotores de la lista. El rubro “Otros” comprende usuarios de bicicletas y otros medios no motorizados (excepto peatones, que figuran aparte), y ocupantes de otros vehículos automotores o de clase desconocida. 
-        Especialmente en este modo de transporte, es importante observar que Estados computan todas las muertes atribuibles al accidente que ocurren dentro de los 30 días de sucedido éste.</p> 
-        <p> <b>Transporte por agua:</b> Los datos de Estados Unidos no son comparables en varios aspectos. </p>
-    </article>
-    </div> 
+
+
+<div class="main">
+    
+<div id="page_two">
+    <div class="item1" id="filter_rang"></div>
+    <div class="alert_data_class" id = "alert_data"></div>
 </div>
 
-<div class = "group_data_filter">
-<div class="item1" id="filter_rang"></div>
-<div class="item1" id="filter_years"></div>
+<div id="page_three">
+    <div class="item1" id="filter_years"></div>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="item1" id="calcular"></div>
+<div id="page_four">
+    <div class="item1" id="order_years"></div>
+</div>
 
 </div>
 
-</section>
 
 <footer>
-  <h4>Data EEUU transport Injuries</h4>
-
-  <div class="social">
-    <a href="#">FB</a>
-    <a href="#">TW</a>
-  </div>
+  <h4>Data EEUU transport Injuries</h4>  
 </footer>
-    
+
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="./data/injuries/injuries.js"></script>
+    <script src="funstyles.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
-  </div>
+
   </body>
 </html>

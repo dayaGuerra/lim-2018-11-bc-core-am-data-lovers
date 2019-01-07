@@ -14,6 +14,10 @@ const output8 = [{'Total_Injured_Persons_Recreational_Boating': 929, 'Total_Inju
 const output9 = [{'Total_Injured_Persons_Recreational_Boating': 929, 'Total_Injured_Persons_Train_Accidents_Rail_Roads': null, 'Total_Injured_Persons_Transit_Non_Rail': null, Year: 1960}, 
   {'Total_Injured_Persons_Water': null, 'Total_Injured_Persons_Water_Not_Related_To_Vessel_Casualties': null, 'Total_Injured_Persons_Water_Vessel_Related': 97, Year: 1975}, 
 ];
+const output10 = [1, 2, 3, 4, 5 ];
+const output11 = 15;
+const output12 = [ {Year: 1960, Day: 12}, {Year: 1965, Day: 13}, {Year: 1970, Day: 14}];
+const output13 = [['1960', 12], ['1965', 13], ['1970', 14] ];
 
 describe('injuries', () => {
   it('debería de ser un objeto', () => {
@@ -21,7 +25,7 @@ describe('injuries', () => {
   });
 
   describe('injuries.cambiarPropiedad', () => {
-    it('deberia de ser una funcion', () => {
+    it('deberia de ser una función', () => {
       expect(typeof injuries.cambiarPropiedad).toBe('function');
     });
     it('debería de retornar un nuevo objeto con los años modificados a number', () => {
@@ -57,7 +61,7 @@ describe('injuries', () => {
     it('debería de ser una función', () => {
       expect(typeof injuries.filtro).toBe('function');
     });
-    it('debería de retornar un array de objetos según la selección del usuario', () => {
+    it('debería de retornar un array de arrays con los valores de las propiedades indicadas', () => {
       expect(injuries.filtro(output6, '1960')).toEqual(output7);
     });
   });
@@ -68,6 +72,24 @@ describe('injuries', () => {
     });
     it('debería de retornar un array de objetos según el rango de selección del usuario', () => {
       expect(injuries.filtroMinMax(output8, '1960', '1975')).toEqual(output9);
+    });
+  });
+
+  describe('injuries.calculate', () => {
+    it('debería de ser una función', () => {
+      expect(typeof injuries.calculate).toBe('function');
+    });
+    it('debería de retornar la suma de todo el array como un valor number', () => {
+      expect(injuries.calculate(output10)).toEqual(output11);
+    });
+  });
+
+  describe('injuries.arrOfArrFunction', () => {
+    it('debería de ser una función', () => {
+      expect(typeof injuries.arrOfArrFunction).toBe('function');
+    });
+    it('debería de retornar un array con un dos valores filtrados, el primero como string y el segundo como number', () => {
+      expect(injuries.arrOfArrFunction(output12, 'Year', 'Day')).toEqual(output13);
     });
   });
 });
