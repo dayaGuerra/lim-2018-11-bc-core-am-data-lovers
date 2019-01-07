@@ -11,6 +11,7 @@ const filterData = (data, propiedad) => {
   return newArr;
 };
 
+
 // Muestra los datos del año seleccionado - requisito 1
 const strainer = (data, inputUser) => {
   return data.filter((ele) => {
@@ -18,16 +19,17 @@ const strainer = (data, inputUser) => {
   });
 };
 
+// Filtra un rango de años con el cual puede interactuar el usuario
 const filterMinMax = (data, inputUser1, inputUser2) => {
   return data.filter((ele) => {
     return ele.Year >= parseInt(inputUser1) && ele.Year <= parseInt(inputUser2);
   });
 };
 
-// Función de calculo 
 
+// funcion reduce, suma el total de personas heridas.
 const computeStats = (data) => {
-  const arrCalculate = data.reduce((total, num) => {
+ const arrCalculate = data.reduce((total, num) => {
     return total + num;
   }, 0);
   return arrCalculate;

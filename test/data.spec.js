@@ -19,7 +19,6 @@ const output11 = 15;
 const output12 = [ {Year: 1960, Day: 12}, {Year: 1965, Day: 13}, {Year: 1970, Day: 14}];
 const output13 = [['1960', 12], ['1965', 13], ['1970', 14]];
 
-
 describe('injuries', () => {
   it('debería de ser un objeto', () => {
     expect(typeof injuries).toBe('object');

@@ -51,6 +51,7 @@ const orderYear = document.getElementById('order_years');
 const viewYearsCol = document.getElementById('computeStats_years');
 
 
+
 // Data del archivo data.js
 
 /* Copia de la data Original*/
@@ -83,6 +84,21 @@ const listitems = (obje, dive) => {
   dive.innerHTML = cadena;
 };
 
+
+// Convertir datos null a 0
+const nulltozero = (data) => { 
+  return data.map(element => {
+    const keys = Object.keys(element);
+    let aReturn = Object.assign({}, element);
+    keys.forEach(key => {
+      if (element[key] === null) {
+        aReturn[key] = 0;
+      }
+    });
+    return aReturn;
+  });
+};
+
 // Template para colocar la tabla de cálculo
 
 const tableCalculate = (objeto, dive) => {
@@ -107,6 +123,7 @@ const showCasillasInSelect = (array) => {
   }); 
   return recibirArreglo;   
 };
+
 selectDocumentYear.innerHTML = showCasillasInSelect(years);
 selectDocumentMinYear.innerHTML = showCasillasInSelect(years);
 selectDocumentMaxYear.innerHTML = showCasillasInSelect(years);
@@ -125,14 +142,18 @@ selectDocumentYear.addEventListener('change', (event) => {
 // Función para mostrar en pantalla el filtro por rango de años
 
 btnShowYear.addEventListener('click', () => {
-  document.getElementById('page_one').style.display = 'none';
-  document.getElementById('page_three').style.display = 'block';
-  
   let minYear = selectDocumentMinYear.value;
   let maxYear = selectDocumentMaxYear.value;
-  let respt = injuries.filterMinMax(newData, minYear, maxYear);
-  let resultS = injuries.nulltozero(respt);
-  listitems(resultS, filterForRang);
+  if (minYear > maxYear) {
+    alertData.innerHTML = `<div class = "alert_rang"><span class = "title_alert">Error Status</span>
+                                                     <span class = "parr_alert">Año incorrecto, el ingreso debe de ser de menor a mayor</span>
+</div>`;
+  } else {
+    let respt = injuries.filtroMinMax(newData, minYear, maxYear);
+    let resultS = denullacero(respt);
+    // sort a rangos
+    listarItems(resultS, filterForRang);
+  }
 });
 
 // Función para ordenar los datos por años y mostrarlos en pantalla
@@ -147,13 +168,74 @@ selectDocumentOrder.addEventListener('change', () => {
 });
 
 // Función para realizar la suma total de personas heridas
-
-selectDocumentCalculo.addEventListener('change', () => {
-  document.getElementById('page_one').style.display = 'none';
-  document.getElementById('page_five').style.display = 'block';
-  
-  const injuriesTotal = injuries.filterData(newData, event.target.value);
-  const computeStatsDataSum = injuries.computeStats(injuriesTotal);
-  tableCalculate(computeStatsDataSum, viewYearsCol);
-  computeStatsTotal.innerHTML = computeStatsDataSum;
+const calculateTotal = document.getElementById('calculate_total');
+selectDocumentCalculo.addEventListener('click', () => {
+  const injuriesTotal = injuries.filtrarPropiedadEspecifica(newData, 'Total_Injuries_Persons');
+  const calculateDataSum = injuries.calculate(injuriesTotal);
+  tableCalculate(viewYearsCol);
+  calculateTotal.innerHTML = calculateDataSum;
 });
+/* copia de data */
+const allDataforpie = injuries.cambiarPropiedad(INJURIES); 
+const newDataforpie = allDataforpie.slice(6, 32);
+const listProperty = document.getElementById('list_property');
+
+/* array con propiedades del objeto */
+const filterProperty = (data) => {
+  const newArrProperty = data.map((obj) => {
+    return obj;
+  });
+  const arrProperty = newArrProperty[0];
+  return Object.keys(arrProperty);
+};
+
+/* Función que muestra las los elementos del objeto sin el caracter /_/ subguion */
+const filterOfProperty = filterProperty(newData);
+
+const showPropertyList = (array) => {
+  let recibirArreglo = '';
+  array.forEach((ele) => {
+    let ele2 = ele.replace(/_/g, ' ');
+
+    recibirArreglo += `<li><button value = "${ele}">${ele2}</button></li>`;
+  }); 
+  return recibirArreglo;   
+};
+
+
+listProperty.innerHTML = showPropertyList(filterOfProperty); // un array de todas las propiedades del objeto
+
+
+listProperty.addEventListener('click', (event) => {
+  const arrOfArrChartsForPie = injuries.arrOfArrFunction(newDataforpie, 'Year', (event.target.value));
+
+  // Load the Visualization API and the piechart package.
+  window.google.charts.load('current', {'packages': ['corechart']});
+
+  // Set a callback to run when the Google Visualization API is loaded.
+  window.google.charts.setOnLoadCallback(drawChart);
+
+  // Callback that creates and populates a data table, 
+  // instantiates the pie chart, passes in the data and
+  // draws it.
+  function drawChart() {
+    // Create the data table.
+    let data = new window.google.visualization.DataTable();
+    data.addColumn('string', 'Year');
+    data.addColumn('number', '');
+    data.addRows(arrOfArrChartsForPie);// recibe arrOfArrCharts
+
+
+    // Set chart options
+    const options = {
+      'height': 500,
+      'responsive': true,
+      'legend': {position: 'bottom', }
+  
+    };
+  
+    // Instantiate and draw our chart, passing in some options.
+    let chart = new window.google.visualization.PieChart(document.getElementById('piechart'));
+    chart.draw(data, options);
+  }
+}); 
