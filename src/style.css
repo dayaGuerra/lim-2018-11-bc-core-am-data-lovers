@@ -1,15 +1,13 @@
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body{
   color: #212121;
   margin: 0;
 }
-.usa-banner{
-}
-/* - - - - - -*/
+
 * {
   box-sizing: border-box;
 }
@@ -125,8 +123,8 @@ html {
   align-items: center;
   }
 .usa img {
-padding: 0.2em;
-margin-right: 0.4em;
+  padding: 0.2em;
+  margin-right: 0.4em;
 }
 header {
   width: 100%;
@@ -137,8 +135,8 @@ header {
   flex-flow: row wrap;
 }
 header .title img {
-width: 100px;
-vertical-align: top;
+  width: 100px;
+  vertical-align: top;
 }
 header .title a{
   display: grid;
@@ -165,7 +163,7 @@ header .title a{
   
 }
 .page_one_portable {
-display: none;
+  display: none;
 }
 footer {
   background: #042042d5;
@@ -176,14 +174,14 @@ footer {
   justify-content: space-between;
 }
 footer .social {
-background: rgb(93, 93, 236);
-display: flex;
-flex-wrap: wrap;
+  background: rgb(93, 93, 236);
+  display: flex;
+  flex-wrap: wrap;
 }
 footer h4 {
-color: #ffffff;
-font-size: 1em;
-align-self: center; 
+  color: #ffffff;
+  font-size: 1em;
+  align-self: center; 
 }
 footer a {
   flex-grow: 1;
@@ -193,10 +191,10 @@ footer a {
   text-decoration: none;
 }
 footer a:hover {
-background: rgb(5, 5, 95);
+  background: rgb(5, 5, 95);
 }
 span {
-padding: 10px;
+  padding: 10px;
 }
 .paragraph{
   font-style: inherit; 
@@ -228,8 +226,8 @@ padding: 10px;
   }
 }
 .icons{
-display: flex;
-justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 .icon_home {
   display: flex;
@@ -237,17 +235,17 @@ justify-content: flex-end;
   
 }
 .icon_menu {
-display: flex;
-margin: 0;
+  display: flex;
+  margin: 0;
 }
 /* SLIDES */
 .slides {
-display: flex;
-justify-content: center;
-align-content: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 .mySlides {
-  width: 50%;
+   width: 50%;
 }
 /* FIN SLIDES */
 /* Style the search box */
@@ -320,18 +318,13 @@ background-color: #0071bc;
   width: 100%;
   }
 .card-year{
-padding: 2em;
-width: 30em;
+  padding: 2em;
+  width: 30em;
 }
 .group{
-font-size: 1em;
-border-bottom: 1px solid #bcbcbc;
-}
-span.info{
-/* float: right; */
-font-size: 1em;
-font-weight: bold;
-
+  font-size: 1.4em;
+  border-bottom: 1px solid #bcbcbc;
+ 
 }
 .prop-year {
 border: 1px solid #797878cc;

@@ -11,7 +11,6 @@ const filterData = (data, propiedad) => {
   return newArr;
 };
 
-
 // Muestra los datos del año seleccionado - requisito 1
 const strainer = (data, inputUser) => {
   return data.filter((ele) => {
@@ -29,7 +28,7 @@ const filterMinMax = (data, inputUser1, inputUser2) => {
 
 // funcion reduce, suma el total de personas heridas.
 const computeStats = (data) => {
- const arrCalculate = data.reduce((total, num) => {
+  const arrCalculate = data.reduce((total, num) => {
     return total + num;
   }, 0);
   return arrCalculate;
