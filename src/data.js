@@ -29,7 +29,7 @@ const filterMinMax = (data, inputUser1, inputUser2) => {
 
 // funcion reduce, suma el total de personas heridas.
 const computeStats = (data) => {
- const arrCalculate = data.reduce((total, num) => {
+  const arrCalculate = data.reduce((total, num) => {
     return total + num;
   }, 0);
   return arrCalculate;

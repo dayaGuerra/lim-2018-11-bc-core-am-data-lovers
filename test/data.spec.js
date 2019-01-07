@@ -18,6 +18,8 @@ const output10 = [1, 2, 3, 4, 5 ];
 const output11 = 15;
 const output12 = [ {Year: 1960, Day: 12}, {Year: 1965, Day: 13}, {Year: 1970, Day: 14}];
 const output13 = [['1960', 12], ['1965', 13], ['1970', 14]];
+const output14 = [ {Year: 1960, Day: null}, {Year: null, Day: 13}, {Year: 1970, Day: null}];
+const output15 = [ {Year: 1960, Day: 0}, {Year: 0, Day: 13}, {Year: 1970, Day: 0}];
 
 describe('injuries', () => {
   it('debería de ser un objeto', () => {
@@ -90,6 +92,15 @@ describe('injuries', () => {
     });
     it('debería de retornar un array con un dos valores filtrados, el primero como string y el segundo como number', () => {
       expect(injuries.arrOfArrFunction(output12, 'Year', 'Day')).toEqual(output13);
+    });
+  });
+
+  describe('injuries.nulltozero', () => {
+    it('debería de ser una función', () => {
+      expect(typeof injuries.nulltozero).toBe('function');
+    });
+    it('debería de retornar un array con las propiedades del ojeto ingresado', () => {
+      expect(injuries.nulltozero(output14)).toEqual(output15);
     });
   });
 });
