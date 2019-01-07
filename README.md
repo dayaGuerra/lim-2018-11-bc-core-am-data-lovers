@@ -55,7 +55,7 @@ En base a este diseño empezamos a diseñar nuestro HTML con algunas cosas bási
 
 ### Tamaños de pantallas
 
-![Imagen](src/imagenes/Readme/Tamaño.jpg)
+![Imagen](src/imagenes/Readme/Tamaño.jpg)       
 
 Diseño de Escritorio
 ====================
@@ -64,30 +64,38 @@ Diseño de Escritorio
 ![Imagen6](src/imagenes/Readme/PRTBF2v3.jpg)
 ![Imagen7](src/imagenes/Readme/PRTBF3v3.jpg)
 ![Imagen8](src/imagenes/Readme/PRTBF4v3.jpg)
+![Imagen16](src/imagenes/Readme/PRTBF5v3.jpg)
+![Imagen17](src/imagenes/Readme/PRTBF6v3.jpg)
+![Imagen18](src/imagenes/Readme/PRTBF7v3.jpg)
+![Imagen19](src/imagenes/Readme/PRTBF8v3.jpg)      
 
 Diseño de Movil
 ================
 
 ![Imagen9](src/imagenes/Readme/PRTBF1v3mb.jpg)
 ![Imagen10](src/imagenes/Readme/PRTBF2v3mb.jpg)
-![Imagen11](src/imagenes/Readme/PRTBF3v3mb.jpg)
+![Imagen11](src/imagenes/Readme/PRTBF3v3mb.jpg)      
 
 
-En el trascurso de la primera y segunda semana del inicio del proyecto se fue armando la primera versión de la aplicación en FIGMA, que nos permitió tener una vista más visual de lo que se quería conseguir, lastimosamente no fue lo solicitado por el usuario por lo que tuvimos que descartar parte de este diseño y armar la versión 3 de baja fidelidad.
+En el trascurso de la primera y segunda semana del inicio del proyecto se fue armando la primera versión de la aplicación en FIGMA, que nos permitió tener una vista más visual de lo que se quería conseguir, lastimosamente no fue lo solicitado por el usuario por lo que tuvimos que descartar parte de este diseño y armar la versión 3 de baja fidelidad.     
 
 ![Imagen12](src/imagenes/Readme/Figma1v1.ip.JPG)
 ![Imagen13](src/imagenes/Readme/Figma2v1.ip.JPG)
 ![Imagen14](src/imagenes/Readme/Figma3v1.ip.JPG)
-![Imagen15](src/imagenes/Readme/Figma4v1.ip.JPG)
+![Imagen15](src/imagenes/Readme/Figma4v1.ip.JPG)     
 
-Quedando como resultado final para el proyecto las siguientes imagenes:     
+Quedando como resultado final para el proyecto las siguientes imagenes:        
 
+![Imagen20](src/imagenes/Figma/Zigma1.jpg)
+![Imagen21](src/imagenes/Figma/Zigma2.jpg)
+![Imagen22](src/imagenes/Figma/Zigma3.jpg)
+![Imagen23](src/imagenes/Figma/Zigma4.jpg)           
 
+Asimismo se trabajo con el programa Zeplin a fin de obtener mejores resultados entre el diseño y la programación:      
 
+[Figma Proyecto](https://www.figma.com/file/eMvpstIQx6KvLkuu4c8H8ccN/Untitled?node-id=0%3A1)     
+[Zeplin Proyecto](https://zpl.io/2jv7pAQ)     
 
-Asimismo se trabajo con el programa Zeplin a fin de obtener mejores resultados entre el diseño y la programación:    
-
-[Zeplin Proyecto](http://www.limni.net)
 
 ## Tests de usabilidad     
 
