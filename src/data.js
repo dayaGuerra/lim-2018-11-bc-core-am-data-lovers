@@ -11,7 +11,6 @@ const filterData = (data, propiedad) => {
   return newArr;
 };
 
-
 // Muestra los datos del año seleccionado - requisito 1
 const strainer = (data, inputUser) => {
   return data.filter((ele) => {
