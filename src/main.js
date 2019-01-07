@@ -91,7 +91,7 @@ const listitems = (obje, dive) => {
 
 // Template para colocar la tabla de cálculo
 
-const tableCalculate = (objeto, dive) => {
+const tableCalculate = (dive) => {
   let result = '';
   const nullDataZero = injuries.nulltozero(newData);
   nullDataZero.forEach((obj) => { 
@@ -127,7 +127,6 @@ selectDocumentYear.addEventListener('change', (event) => {
 }); 
 
 // Función para mostrar en pantalla el filtro por rango de años
-
 btnShowYear.addEventListener('click', () => {
   let minYear = selectDocumentMinYear.value;
   let maxYear = selectDocumentMaxYear.value;
@@ -136,7 +135,7 @@ btnShowYear.addEventListener('click', () => {
                                                      <span class = "parr_alert">Año incorrecto, el ingreso debe de ser de menor a mayor</span>
 </div>`;
   } else {
-    let respt = injuries.filtroMinMax(newData, minYear, maxYear);
+    let respt = injuries.filterMinMax(newData, minYear, maxYear);
     let resultS = injuries.nulltozero(respt);
     // sort a rangos
     listitems(resultS, filterForRang);
@@ -151,11 +150,12 @@ selectDocumentOrder.addEventListener('change', () => {
   listitems(yearOrderzero, orderYear);
 });
 
+
 // Función para realizar la suma total de personas heridas
 const calculateTotal = document.getElementById('calculate_total');
 selectDocumentCalculo.addEventListener('click', () => {
-  const injuriesTotal = injuries.filterData(newData, 'Total_Injuries_Persons');
-  const calculateDataSum = injuries.calculate(injuriesTotal);
+  const injuriesTotal = injuries.filterData(newData, 'Total_Injured_Persons');
+  const calculateDataSum = injuries.computeStats(injuriesTotal);
   tableCalculate(viewYearsCol);
   calculateTotal.innerHTML = calculateDataSum;
 });
