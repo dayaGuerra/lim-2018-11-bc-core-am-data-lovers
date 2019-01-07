@@ -1,54 +1,7 @@
-// Slideshow automatic
-let slideIndex = 0;
-const showSlides = () => {
-  let i;
-  const slides = document.getElementsByClassName('mySlides');
-  const dots = document.getElementsByClassName('dot');
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none';
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(' active', '');
-  }
-  slides[slideIndex - 1].style.display = 'block';
-  dots[slideIndex - 1].className += ' active';
-  setTimeout(showSlides, 2000);
-};
-
-showSlides();
-
-<<<<<<< HEAD
-=======
-// Menu de navegación
- 
->>>>>>> 7a3ef29c22c743a180e667d080696c37636e9d27
-const openNav = document.getElementById('open_nav');
-openNav.addEventListener('click', () => {
-  document.getElementById('mySidenav').style.width = '250px';
-});
-
-const closeNav = document.getElementById('close_nav');
-closeNav.addEventListener('click', () => {
-  document.getElementById('mySidenav').style.width = '0';
-});
-
-
 // Variables para jalar los id del HTML
 const selectDocumentYear = document.getElementById('select_year');
 const selectDocumentMinYear = document.getElementById('select_min_year');
 const selectDocumentMaxYear = document.getElementById('select_max_year');
-<<<<<<< HEAD
-const btnMostrarAños = document.getElementById('btn_mostrar_años');
-// const btnMostrarCalculo = document.getElementById('btn_mostrar_calculo');
-// DOM para mostrar data en pantalla
-const filterForYear = document.getElementById('filter_years');
-const filterForRang = document.getElementById('filter_rang');
-// const calculo = document.getElementById('calculo');
-=======
 const btnShowYear = document.getElementById('btn_show_year');
 const selectDocumentOrder = document.getElementById('order');
 const computeStatsTotal = document.getElementById('computeStats_total');
@@ -62,42 +15,18 @@ const orderYear = document.getElementById('order_years');
 const viewYearsCol = document.getElementById('computeStats_years');
 
 
->>>>>>> 7a3ef29c22c743a180e667d080696c37636e9d27
 
 // Data del archivo data.js
 
 /* Copia de la data Original*/
-<<<<<<< HEAD
-const newData = injuries.cambiarPropiedad(INJURIES); // array de objetoos
-const years = injuries.filtrarPropiedadEspecifica(newData, 'Year');
-=======
 const newData = injuries.changeProperty(INJURIES); // array de objetoos
 const years = injuries.filterData(newData, 'Year');
 
->>>>>>> 7a3ef29c22c743a180e667d080696c37636e9d27
 // Funcion para mostrar cartas solo con los valores de la propiedad Year
 const listitems = (obje, dive) => {
   let cadena = '';
   obje.forEach((obj) => {
     cadena += `<div class = "card-year">
-<<<<<<< HEAD
-  <article class = "prop-year">
-  <h2 class = "filter-year">${obj.Year}</h2>
-  <div/>
-  <div class = "group"> General por año: <span class="info"> ${obj.Total_Injured_Persons }</span></div>
-  <div class = "group"> En aire:<span class="info"> ${obj.Total_Injured_Persons_Air }</span></div>
-  <div class = "group"> Ocupantes de bus: <span class="info">${obj.Total_Injured_Persons_Bus_Occupants}</span></div>
-  <div class = "group"> Personas lesionadas en carretera:<span class="info"> ${obj.Total_Injured_Persons_Highway}</span></div>
-  <div class = "group"> En motocicleta:<span class="info"> ${obj.Total_Injured_Persons_Motorcyclists}</span></div>
-  <div class = "group"> Ocupantes en automóviles:<span class="info"> ${obj.Total_Injured_Persons_Passenger_Car_Occupants}</span></div>
-  <div class = "group"> Pasajeros de automóviles:<span class="info"> ${obj.Total_Injured_Persons_Passenger_Or_Occupant}</span></div>
-  <div class = "group"> Peatones heridos:<span class="info">${obj.Total_Injured_Persons_Pedestrians}</span></div>
-  <div class = "group"> Personas lesionadas en aerolíneas de EEUU: <span class="info">${obj.Total_Injured_Persons_US_Air_Carrier}</span></div>
-  </div>
-  </article>
-  </div>
-  `;
-=======
     <article class = "prop-year">
      <h2 class = "filter-year">${obj.Year}</h2>
      <div/>
@@ -114,38 +43,13 @@ const listitems = (obje, dive) => {
      </article>
  </div>
     `;
->>>>>>> 7a3ef29c22c743a180e667d080696c37636e9d27
   });
   dive.innerHTML = cadena;
 };
 
-<<<<<<< HEAD
-const tableCalculo = (obje, dive) => {
-  let data = '';
-  obje.forEach((obj) => {
-    data += `
-  `;
-  });
-  dive.innerHTML = data;
-};
-
-
-
-
-
-
-
-
-
-
-
-// convertir datos null a 0
-const denullacero = (data) => {
-=======
 
 // Convertir datos null a 0
 const nulltozero = (data) => { 
->>>>>>> 7a3ef29c22c743a180e667d080696c37636e9d27
   return data.map(element => {
     const keys = Object.keys(element);
     let aReturn = Object.assign({}, element);
@@ -158,9 +62,6 @@ const nulltozero = (data) => {
   });
 };
 
-<<<<<<< HEAD
-const mostrarCasillasEnSelect = (array) => {
-=======
 // Template para colocar la tabla de cálculo
 
 const tableCalculate = (objeto, dive) => {
@@ -179,7 +80,6 @@ const tableCalculate = (objeto, dive) => {
 
 // Funcion para mostrar los años en el select
 const showCasillasInSelect = (array) => {
->>>>>>> 7a3ef29c22c743a180e667d080696c37636e9d27
   let recibirArreglo = '';
   array.forEach((ele) => {
     recibirArreglo += `<option value = "${ele}">${ele}</option>`;
@@ -191,18 +91,9 @@ selectDocumentYear.innerHTML = showCasillasInSelect(years);
 selectDocumentMinYear.innerHTML = showCasillasInSelect(years);
 selectDocumentMaxYear.innerHTML = showCasillasInSelect(years);
 
-<<<<<<< HEAD
-selectDocumentYear.addEventListener('change', (event) => {
-  let result = injuries.filtro(newData, (parseInt(event.target.value)));
-  let resultCero = denullacero(result);
-  listarItems(resultCero, filterForYear);
-});
-btnMostrarAños.addEventListener('click', () => {
-=======
 // Mostrar cartas según la selección ingresada por el usuario
  
 selectDocumentYear.addEventListener('change', (event) => {
->>>>>>> 7a3ef29c22c743a180e667d080696c37636e9d27
   document.getElementById('page_one').style.display = 'none';
   document.getElementById('page_two').style.display = 'block';
   
@@ -228,15 +119,6 @@ btnShowYear.addEventListener('click', () => {
   }
 });
 
-<<<<<<< HEAD
-// btnMostrarCalculo.addEventListener('click', () => {
-// let minY = selectDocumentMinYear.value;
-// let maxY = selectDocumentMaxYear.value;
-// // let resptet = funcion de reduce
-// let resultSx = denullacero(respt);
-// listarItems(resultSx, calculo);
-// });
-=======
 // Función para ordenar los datos por años y mostrarlos en pantalla
 
 selectDocumentOrder.addEventListener('change', () => {
@@ -320,4 +202,3 @@ listProperty.addEventListener('click', (event) => {
     chart.draw(data, options);
   }
 }); 
->>>>>>> 7a3ef29c22c743a180e667d080696c37636e9d27
