@@ -64,7 +64,7 @@ Diseño de Escritorio
 ![Imagen6](src/imagenes/Readme/PRTBF2v3.jpg)
 ![Imagen7](src/imagenes/Readme/PRTBF3v3.jpg)
 ![Imagen8](src/imagenes/Readme/PRTBF4v3.jpg)
-![Imagen16](src/imagenes/Readme/PRTBF5v3.jpg)
+![Imagen16](src/imagenes/Readme/PRTBF5v3.jpg)   
 ![Imagen17](src/imagenes/Readme/PRTBF6v3.jpg)
 ![Imagen18](src/imagenes/Readme/PRTBF7v3.jpg)
 ![Imagen19](src/imagenes/Readme/PRTBF8v3.jpg)      
