@@ -3,13 +3,14 @@ const cambiarPropiedad = (data) => {
   return data.map(obj => Object.assign({}, obj, { Year: (new Date(obj.Year).getFullYear())}));
 };
 
-// Funcion que toma propiedades especificas.
+// Función que toma propiedades especificas.
 const filtrarPropiedadEspecifica = (data, propiedad) => {
   const newArr = data.map((obj) => {
     return obj[propiedad];
   });
   return newArr;
 };
+
 
 // Muestra los datos del año seleccionado - requisito 1
 const filtro = (data, inputUser) => {
@@ -18,23 +19,22 @@ const filtro = (data, inputUser) => {
   });
 };
 
+// Filtra un rango de años con el cual puede interactuar el usuario
 const filtroMinMax = (data, inputUser1, inputUser2) => {
   return data.filter((ele) => {
     return ele.Year >= parseInt(inputUser1) && ele.Year <= parseInt(inputUser2);
   });
 };
 
-// funcion reduce
-
-const calcular = (data) => {
-  const arrCa = data.reduce((total, num) => {
+// funcion reduce, suma el total de personas heridas.
+const calculate = (data) => {
+  const arrCalculate = data.reduce((total, num) => {
     return total + num;
   }, 0);
-  return arrCa;
+  return arrCalculate;
 };
 
 // Función ordenar por año de forma ascendente y descentente
-
 const sorts = (data, inputUser) => {
   const data2 = data.slice(0, data.lenght);
   data2.sort((year1, year2) => {
@@ -53,11 +53,20 @@ const sorts = (data, inputUser) => {
   return data2;
 };
 
+// Obtener un array con dos elementos string y number
+const arrOfArrFunction = (data, property1, property2) => {
+  const newArrOfArr = data.map((obj) => {
+    return [obj[property1].toString(), obj[property2]];
+  });
+  return newArrOfArr;
+};
+
 window.injuries = {
   cambiarPropiedad,
   filtrarPropiedadEspecifica,
   filtro,
   filtroMinMax,
-  calcular,
+  calculate,
   sorts,
+  arrOfArrFunction,
 };
