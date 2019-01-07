@@ -11,7 +11,7 @@ const filterForYear = document.getElementById('filter_years');
 const filterForRang = document.getElementById('filter_rang');
 const orderYear = document.getElementById('order_years');
 const viewYearsCol = document.getElementById('calculate_years');
-const alertData = document.getElementById('alert_data');
+const alertData = document.getElementById('alert_data');  
 
 // Data del archivo data.js
 
@@ -31,6 +31,7 @@ showFilterWindow.addEventListener('click', () => {
     elemento.style.display = 'block';
   } else {
     elemento.style.display = 'none';
+
   }
 });
 
@@ -90,20 +91,6 @@ const listarItems = (obje, dive) => {
   dive.innerHTML = cadena;
 };
 /* Template tabla total, muestra la tabla total */
-const tableCalculate = (dive) => {
-  let result = '';
-  const nullDataZero = denullacero(newData);
-  //  aqui esta la funcion de null a 0, esa funcion debe de cambiar de nombre
-  nullDataZero.forEach((obj) => { 
-    result += `
-   <tr>
-     <td>${obj.Year}</td>
-     <td> ${obj.Total_Injured_Persons}</td>
-   </tr>
-    `;
-  });
-  dive.innerHTML = result;
-};
 
 // convertir datos null a 0
 const denullacero = (data) => { 
@@ -117,6 +104,22 @@ const denullacero = (data) => {
     });
     return aRetornar;
   });
+};
+
+const tableCalculate = (dive) => {
+  let result = '';
+  const nullDataZero = denullacero(newData);
+  console.log(nullDataZero);
+  //  aqui esta la funcion de null a 0, esa funcion debe de cambiar de nombre
+  nullDataZero.forEach((obj) => { 
+    result += `
+   <tr>
+     <td>${obj.Year}</td>
+     <td> ${obj.Total_Injured_Persons}</td>
+   </tr>
+    `;
+  });
+  dive.innerHTML = result;
 };
 
 
@@ -155,8 +158,8 @@ btnMostrarAños.addEventListener('click', () => {
 });
 
 selectDocumentOrder.addEventListener('change', () => {
-  document.getElementById('page_two').style.display = 'block';
   const yearOrder = injuries.sorts(newData, event.target.value);
+
   listarItems(yearOrder, orderYear);
 });
 
@@ -164,6 +167,7 @@ const calculateTotal = document.getElementById('calculate_total');
 selectDocumentCalculo.addEventListener('click', () => {
   const injuriesTotal = injuries.filtrarPropiedadEspecifica(newData, 'Total_Injuries_Persons');
   const calculateDataSum = injuries.calculate(injuriesTotal);
+  console.log(calculateDataSum);
   tableCalculate(viewYearsCol);
   calculateTotal.innerHTML = calculateDataSum;
 });
@@ -200,6 +204,7 @@ listProperty.innerHTML = showPropertyList(filterOfProperty); // un array de toda
 
 listProperty.addEventListener('click', (event) => {
   const arrOfArrChartsForPie = injuries.arrOfArrFunction(newDataforpie, 'Year', (event.target.value));
+
 
   // Load the Visualization API and the piechart package.
   window.google.charts.load('current', {'packages': ['corechart']});
