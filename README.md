@@ -86,10 +86,10 @@ En el trascurso de la primera y segunda semana del inicio del proyecto se fue ar
 
 Quedando como resultado final para el proyecto las siguientes imagenes:        
 
-![Imagen20](src/imagenes/Figma/Zigma1.jpg)
-![Imagen21](src/imagenes/Figma/Zigma2.jpg)
-![Imagen22](src/imagenes/Figma/Zigma3.jpg)
-![Imagen23](src/imagenes/Figma/Zigma4.jpg)           
+![Imagen20](src/imagenes/Readme/Zigma1.jpg)
+![Imagen21](src/imagenes/Readme/Zigma2.jpg)
+![Imagen22](src/imagenes/Readme/Zigma3.jpg)
+![Imagen23](src/imagenes/Readme/Zigma4.jpg)           
 
 Asimismo se trabajo con el programa Zeplin a fin de obtener mejores resultados entre el diseño y la programación:      
 
