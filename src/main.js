@@ -2,7 +2,7 @@
 const selectDocumentYear = document.getElementById('select_year');
 const selectDocumentMinYear = document.getElementById('select_min_year');
 const selectDocumentMaxYear = document.getElementById('select_max_year');
-const btnMostrarAños = document.getElementById('btn_mostrar_años');
+const btnShowYear = document.getElementById('btn_show_year');
 const selectDocumentOrder = document.getElementById('order');
 const selectDocumentCalculo = document.getElementById('calc');
 
@@ -11,14 +11,14 @@ const filterForYear = document.getElementById('filter_years');
 const filterForRang = document.getElementById('filter_rang');
 const orderYear = document.getElementById('order_years');
 const viewYearsCol = document.getElementById('calculate_years');
-const alertData = document.getElementById('alert_data');  
+const alertData = document.getElementById('alert_data');
 
 // Data del archivo data.js
 
 /* Copia de la data Original*/
-const allData = injuries.cambiarPropiedad(INJURIES); 
-const newData = allData.slice(7, 32);// array de objetoos
-const years = injuries.filtrarPropiedadEspecifica(newData, 'Year');
+const allData = injuries.changeProperty(INJURIES); // array de objetoos
+const newData = allData.slice(7, 32); // array de objetos 
+const years = injuries.filterData(newData, 'Year');
 
 /* Ocultar y mostrar pantallas */
 
@@ -31,7 +31,6 @@ showFilterWindow.addEventListener('click', () => {
     elemento.style.display = 'block';
   } else {
     elemento.style.display = 'none';
-
   }
 });
 
@@ -64,9 +63,8 @@ showCalculate.addEventListener('click', () => {
 });
 /* Fin de mostrar y ocultar pantallas */
 
-/* Inicio de template, muestra las cards con 
-informacioón importante de la data */
-const listarItems = (obje, dive) => {
+// Funcion para mostrar cartas solo con los valores de la propiedad Year
+const listitems = (obje, dive) => {
   let cadena = '';
   
   obje.forEach((obj) => { 
@@ -75,7 +73,7 @@ const listarItems = (obje, dive) => {
      <h2 class = "filter-year">${obj.Year}</h2>
      <div/>
          <div class = "group"> General por año: <span class="info"> ${obj.Total_Injured_Persons}</span></div>
-         <div class = "group"> Por aire:<span class="info"> ${obj.Total_Injured_Persons_Air}</span></div>
+         <div class = "group"> En aire:<span class="info"> ${obj.Total_Injured_Persons_Air}</span></div>
          <div class = "group"> Ocupantes de bus: <span class="info">${obj.Total_Injured_Persons_Bus_Occupants}</span></div>
          <div class = "group"> Personas lesionadas en carretera:<span class="info"> ${obj.Total_Injured_Persons_Highway}</span></div>
          <div class = "group"> En motocicleta:<span class="info"> ${obj.Total_Injured_Persons_Motorcyclists}</span></div>
@@ -90,27 +88,12 @@ const listarItems = (obje, dive) => {
   });
   dive.innerHTML = cadena;
 };
-/* Template tabla total, muestra la tabla total */
 
-// convertir datos null a 0
-const denullacero = (data) => { 
-  return data.map(element => {
-    const keys = Object.keys(element);
-    let aRetornar = Object.assign({}, element);
-    keys.forEach(key => {
-      if (element[key] === null) {
-        aRetornar[key] = 'NO EXISTE DATA';
-      }
-    });
-    return aRetornar;
-  });
-};
+// Template para colocar la tabla de cálculo
 
 const tableCalculate = (dive) => {
   let result = '';
-  const nullDataZero = denullacero(newData);
-  console.log(nullDataZero);
-  //  aqui esta la funcion de null a 0, esa funcion debe de cambiar de nombre
+  const nullDataZero = injuries.nulltozero(newData);
   nullDataZero.forEach((obj) => { 
     result += `
    <tr>
@@ -122,27 +105,29 @@ const tableCalculate = (dive) => {
   dive.innerHTML = result;
 };
 
-
 // Funcion para mostrar los años en el select
-const mostrarCasillasEnSelect = (array) => {
+const showCasillasInSelect = (array) => {
   let recibirArreglo = '';
   array.forEach((ele) => {
     recibirArreglo += `<option value = "${ele}">${ele}</option>`;
   }); 
   return recibirArreglo;   
 };
-selectDocumentYear.innerHTML = mostrarCasillasEnSelect(years);
-selectDocumentMinYear.innerHTML = mostrarCasillasEnSelect(years);
-selectDocumentMaxYear.innerHTML = mostrarCasillasEnSelect(years);
+
+selectDocumentYear.innerHTML = showCasillasInSelect(years);
+selectDocumentMinYear.innerHTML = showCasillasInSelect(years);
+selectDocumentMaxYear.innerHTML = showCasillasInSelect(years);
 
 // Mostrar cartas según la selección ingresada por el usuario
-selectDocumentYear.addEventListener('change', (event) => {
-  let result = injuries.filtro(newData, (parseInt(event.target.value)));
-  let resultCero = denullacero(result);
-  listarItems(resultCero, filterForYear);
-}); 
  
-btnMostrarAños.addEventListener('click', () => {
+selectDocumentYear.addEventListener('change', (event) => {
+  let result = injuries.strainer(newData, (parseInt(event.target.value)));
+  let resultCero = injuries.nulltozero(result);
+  listitems(resultCero, filterForYear);
+}); 
+
+// Función para mostrar en pantalla el filtro por rango de años
+btnShowYear.addEventListener('click', () => {
   let minYear = selectDocumentMinYear.value;
   let maxYear = selectDocumentMaxYear.value;
   if (minYear > maxYear) {
@@ -150,29 +135,32 @@ btnMostrarAños.addEventListener('click', () => {
                                                      <span class = "parr_alert">Año incorrecto, el ingreso debe de ser de menor a mayor</span>
 </div>`;
   } else {
-    let respt = injuries.filtroMinMax(newData, minYear, maxYear);
-    let resultS = denullacero(respt);
+    let respt = injuries.filterMinMax(newData, minYear, maxYear);
+    let resultS = injuries.nulltozero(respt);
     // sort a rangos
-    listarItems(resultS, filterForRang);
+    listitems(resultS, filterForRang);
   }
 });
 
-selectDocumentOrder.addEventListener('change', () => {
-  const yearOrder = injuries.sorts(newData, event.target.value);
+// Función para ordenar los datos por años y mostrarlos en pantalla
 
-  listarItems(yearOrder, orderYear);
+selectDocumentOrder.addEventListener('change', () => {
+  const yearOrder = injuries.sortData(newData, event.target.value);
+  const yearOrderzero = injuries.nulltozero(yearOrder);
+  listitems(yearOrderzero, orderYear);
 });
 
+
+// Función para realizar la suma total de personas heridas
 const calculateTotal = document.getElementById('calculate_total');
 selectDocumentCalculo.addEventListener('click', () => {
-  const injuriesTotal = injuries.filtrarPropiedadEspecifica(newData, 'Total_Injuries_Persons');
-  const calculateDataSum = injuries.calculate(injuriesTotal);
-  console.log(calculateDataSum);
+  const injuriesTotal = injuries.filterData(newData, 'Total_Injured_Persons');
+  const calculateDataSum = injuries.computeStats(injuriesTotal);
   tableCalculate(viewYearsCol);
   calculateTotal.innerHTML = calculateDataSum;
 });
 /* copia de data */
-const allDataforpie = injuries.cambiarPropiedad(INJURIES); 
+const allDataforpie = injuries.changeProperty(INJURIES); 
 const newDataforpie = allDataforpie.slice(6, 32);
 const listProperty = document.getElementById('list_property');
 
@@ -205,35 +193,28 @@ listProperty.innerHTML = showPropertyList(filterOfProperty); // un array de toda
 listProperty.addEventListener('click', (event) => {
   const arrOfArrChartsForPie = injuries.arrOfArrFunction(newDataforpie, 'Year', (event.target.value));
 
-
-  // Load the Visualization API and the piechart package.
+  // Cargue la API de visualización y el paquete piechart.
   window.google.charts.load('current', {'packages': ['corechart']});
 
-  // Set a callback to run when the Google Visualization API is loaded.
+  // Establezca una devolución de llamada para que se ejecute cuando se carga la API de visualización de Google.
   window.google.charts.setOnLoadCallback(drawChart);
 
-  // Callback that creates and populates a data table, 
-  // instantiates the pie chart, passes in the data and
-  // draws it.
+  // La devolución de llamada que crea y completa una tabla de datos, crea una instancia del gráfico circular, pasa los datos y los dibuja.
   function drawChart() {
-    // Create the data table.
+    // Creación de la data de la tabla.
     let data = new window.google.visualization.DataTable();
     data.addColumn('string', 'Year');
     data.addColumn('number', '');
     data.addRows(arrOfArrChartsForPie);// recibe arrOfArrCharts
-
-
-    // Set chart options
+    // Establecer opciones de gráfico
     const options = {
       'height': 500,
       'responsive': true,
       'legend': {position: 'bottom', }
   
     };
-  
-    // Instantiate and draw our chart, passing in some options.
+    // Crea una instancia y dibuja nuestra gráfica, pasando algunas opciones.
     let chart = new window.google.visualization.PieChart(document.getElementById('piechart'));
     chart.draw(data, options);
   }
 }); 
-
