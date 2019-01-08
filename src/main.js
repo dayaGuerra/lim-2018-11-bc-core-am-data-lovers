@@ -7,11 +7,8 @@ const selectDocumentOrder = document.getElementById('order');
 const selectDocumentCalculo = document.getElementById('calc');
 
 // DOM para mostrar data en pantalla
-const filterForYear = document.getElementById('filter_years');
-const filterForRang = document.getElementById('filter_rang');
-const orderYear = document.getElementById('order_years');
+const showTemplateData = document.getElementById('show_template_data');
 const viewYearsCol = document.getElementById('calculate_years');
-const alertData = document.getElementById('alert_data');
 
 // Data del archivo data.js
 
@@ -64,6 +61,7 @@ showCalculate.addEventListener('click', () => {
 /* Fin de mostrar y ocultar pantallas */
 
 // Funcion para mostrar cartas solo con los valores de la propiedad Year
+
 const listitems = (obje, dive) => {
   let cadena = '';
   
@@ -88,6 +86,7 @@ const listitems = (obje, dive) => {
   });
   dive.innerHTML = cadena;
 };
+
 
 // Template para colocar la tabla de cálculo
 
@@ -123,7 +122,7 @@ selectDocumentMaxYear.innerHTML = showCasillasInSelect(years);
 selectDocumentYear.addEventListener('change', (event) => {
   let result = injuries.strainer(newData, (parseInt(event.target.value)));
   let resultCero = injuries.nulltozero(result);
-  listitems(resultCero, filterForYear);
+  listitems(resultCero, showTemplateData);
 }); 
 
 // Función para mostrar en pantalla el filtro por rango de años
@@ -131,14 +130,14 @@ btnShowYear.addEventListener('click', () => {
   let minYear = selectDocumentMinYear.value;
   let maxYear = selectDocumentMaxYear.value;
   if (minYear > maxYear) {
-    alertData.innerHTML = `<div class = "alert_rang"><span class = "title_alert">Error Status</span>
+    showTemplateData.innerHTML = `<div class = "alert_rang"><span class = "title_alert">Error Status</span>
                                                      <span class = "parr_alert">Año incorrecto, el ingreso debe de ser de menor a mayor</span>
 </div>`;
   } else {
     let respt = injuries.filterMinMax(newData, minYear, maxYear);
     let resultS = injuries.nulltozero(respt);
     // sort a rangos
-    listitems(resultS, filterForRang);
+    listitems(resultS, showTemplateData);
   }
 });
 
@@ -147,7 +146,7 @@ btnShowYear.addEventListener('click', () => {
 selectDocumentOrder.addEventListener('change', () => {
   const yearOrder = injuries.sortData(newData, event.target.value);
   const yearOrderzero = injuries.nulltozero(yearOrder);
-  listitems(yearOrderzero, orderYear);
+  listitems(yearOrderzero, showTemplateData);
 });
 
 
@@ -181,7 +180,7 @@ const showPropertyList = (array) => {
   array.forEach((ele) => {
     let ele2 = ele.replace(/_/g, ' ');
 
-    recibirArreglo += `<li><button value = "${ele}">${ele2}</button></li>`;
+    recibirArreglo += `<li><button class = "btn_graphics" value = "${ele}">${ele2}</button></li>`;
   }); 
   return recibirArreglo;   
 };
@@ -205,7 +204,7 @@ listProperty.addEventListener('click', (event) => {
     let data = new window.google.visualization.DataTable();
     data.addColumn('string', 'Year');
     data.addColumn('number', '');
-    data.addRows(arrOfArrChartsForPie);// recibe arrOfArrCharts
+    data.addRows(arrOfArrChartsForPie); // recibe arrOfArrChart
     // Establecer opciones de gráfico
     const options = {
       'height': 500,
@@ -216,5 +215,8 @@ listProperty.addEventListener('click', (event) => {
     // Crea una instancia y dibuja nuestra gráfica, pasando algunas opciones.
     let chart = new window.google.visualization.PieChart(document.getElementById('piechart'));
     chart.draw(data, options);
+
+    let barchart = new window.google.visualization.BarChart(document.getElementById('barchart_div'));  
+    barchart.draw(data, options);
   }
 });
