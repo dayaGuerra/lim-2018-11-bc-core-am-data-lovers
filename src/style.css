@@ -390,13 +390,14 @@ h3.title_alert{
     position: relative;
 }
 .btn-group button {
-  text-align:center; /*pp */
-  background-color: #4CAF50; /* Green background */
-  border: 1px solid green; /* Green border */
+  text-align:center;
+  font-size: 15px;
+  background-color: #046b99; /* blue background */
+  border: 0.05px solid #f1f1f1; /* white border */
   color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
+  padding: 20px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
-  width: 50%; /* Set a width if needed */
+  width: 80%; /* Set a width if needed */
   /*display: block;*/ /* Make the buttons appear below each other */ 
 }
 .btn-group button:not(:last-child) {
@@ -404,7 +405,7 @@ h3.title_alert{
 }
 /* Add a background color on hover */
 .btn-group button:hover {
-  background-color: #3e8e41;
+  background-color: #112e51;
 }
 a  {
   display:block;
