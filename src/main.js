@@ -71,8 +71,8 @@ const listitems = (obje, dive) => {
     cadena += `<div class = "card-year">
     <article class = "prop-year">
      <h2 class = "filter-year">${obj.Year}</h2>
-     <div/>
-         <div class = "group"> General por año: <span class="info"> ${obj.Total_Injured_Persons}</span></div>
+     <div id="cards">
+         <div class = "group"> General por año:<span class="info"> ${obj.Total_Injured_Persons}</span></div>
          <div class = "group"> En aire:<span class="info"> ${obj.Total_Injured_Persons_Air}</span></div>
          <div class = "group"> Ocupantes de bus: <span class="info">${obj.Total_Injured_Persons_Bus_Occupants}</span></div>
          <div class = "group"> Personas lesionadas en carretera:<span class="info"> ${obj.Total_Injured_Persons_Highway}</span></div>
