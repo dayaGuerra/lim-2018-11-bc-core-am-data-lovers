@@ -10,33 +10,32 @@
         </head>
   
 <body>
-<div class="usa-banner">
-<header class="usa-banner-header header">
-<div class="usa-grid usa-banner-inner">
-<img src="imagenes/united-states-of-america.png" alt="U.S. flag">
-<span>An official website of the United States government</span>
-</div>
-</header>
-</div>
-<header>
-<div class="title">   
-        <img src="imagenes/logo_USAGov.png" width="150" alt="">
-        <a class="title_header" href="#">U.S. Injuries Data Portal</a>
-        
-</div>  
-</header>       
+<header class="usa_banner">
+
+    <div class="usa_banner_header">
+            <img src="imagenes/united-states-of-america.png" alt="U.S. flag">
+            <span class="title_banner_header">An official website of the United States government</span>
+    </div>
+
+    <div class="usa_banner_logo">   
+            <img class = "img_banner" src="imagenes/logo_USAGov.png" width="150" alt="">
+            <span class="title_header" >U.S. Injuries Data Portal</span>      
+    </div>  
+
+</header>  
+
+<main class = "main_content">
 <div class="row">
     
-        <div class="col-3 col-s-3 menu">
-          <div class="tab">
-            <a href= "#graficos" id="button_graficos">Graficos</a>
-            
-            <a href= "#page_five" id="calc">Calculo total</a>
-            <a target="_blank" href= "https://www.usa.gov/" id="button_descargar">Más información</a>
-           
+        
+          <div class="tab ">
+             <li><a class="active" id="mostrar_filtros" href= "#filtros">Filtros</a></li>
+             <li><a href= "#graficos" id="button_graficos">Graficos</a></li>
+             <li><a href= "#page_five" id="calc">Calculo total</a></li>
+             <li><a target="_blank" href= "poner un link " id="button_descargar">Más información</a></li>
             </div> 
-        </div>
-            <div class="col-6 col-s-9 paragraph_desktop" id="home_text_1">
+        
+            <div class="paragraph_desktop" id="home_text_1">
                     <h1>Personas heridas en U.S.</h1>
                     <p> Para Estados Unidos, el número total de muertes es inferior a la suma de las muertes indicada para cada modo de transporte porque algunas muertes se contaron en más de un modo; es decir que dicho país corrigió la doble contabilización al calcular el total de muertes.</p>
                     <h3>Transporte aéreo:</h3> 
@@ -48,27 +47,25 @@
                      <p> Los datos de Estados Unidos no son comparables en varios aspectos. </p>
                     </div>
             
-                <div class="col-6 col-s-9 paragraph" id="home_text_2">
+                <div class="paragraph" id="home_text_2">
                     <h1>Personas heridas en U.S.</h1>
                     <p>En la actualidad, muchas personas sufren accidentes en diferentes medios de transporte.</p>
                     <p>Este registro data desde 1960 al 2016, la cual almacena el número de personas heridas en algún medio de trasporte</p>
                     <p>o actividades que tengan que ver con este sector.</p>
                 </div>
-                <div id = "graficos" class="col-6 col-s-9" style="display:none;overflow: visible;">
+
+                <div id = "graficos" style="display:none;overflow: visible;">
                         <div class="btn-group">
                         <ul id="list_property" style="text-align: center"></ul>
                         </div>
                      
-                        <div id="piechart" class="googleCharts" style="width:100%; text-align: center !important"></div>
-                        <div id="barchart_div" class="googleCharts" style="width:100%; text-align: center !important"></div>
+                        <div id="piechart" class="googleCharts" ></div>
+                        <div id="barchart_div" class="googleCharts"></div>
                 </div>
-               
+                
+                
                       
-                <div class="col-3 col-s-3 menu">
-                <div class="tab">
-                        <a id="mostrar_filtros" href= "#filtros">Filtros</a>
-                </div>
-            </div>
+             
             <div id = "filtros" class="filters" style="display:none">
                     <div>
                        <ul id="myul" class="myul">
@@ -113,8 +110,16 @@
 
         <div class="item1" id="show_template_data"></div>
 
-<footer>
-  <h4>Data EEUU transport Injuries</h4>  
+</main>
+
+<footer class="footer ">
+  <h4>Data EEUU transport Injuries</h4> 
+
+  <div class="footer_img">
+    <img src="imagenes/redf1.png" alt="facebook_icon">
+    <img src="imagenes/redi2.png" alt="instagram_icon">
+    <img src="imagenes/redt3.png" alt="twitter_icon">
+</div>
 </footer>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="./data/injuries/injuries.js"></script>

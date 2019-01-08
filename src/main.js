@@ -195,11 +195,8 @@ listProperty.addEventListener('click', (event) => {
   // Cargue la API de visualización y el paquete piechart.
   window.google.charts.load('current', {'packages': ['corechart']});
 
-  // Establezca una devolución de llamada para que se ejecute cuando se carga la API de visualización de Google.
-  window.google.charts.setOnLoadCallback(drawChart);
-
   // La devolución de llamada que crea y completa una tabla de datos, crea una instancia del gráfico circular, pasa los datos y los dibuja.
-  function drawChart() {
+  const drawChart = () => {
     // Creación de la data de la tabla.
     let data = new window.google.visualization.DataTable();
     data.addColumn('string', 'Year');
@@ -218,5 +215,8 @@ listProperty.addEventListener('click', (event) => {
 
     let barchart = new window.google.visualization.BarChart(document.getElementById('barchart_div'));  
     barchart.draw(data, options);
-  }
+  };
+
+  // Establezca una devolución de llamada para que se ejecute cuando se carga la API de visualización de Google.
+  window.google.charts.setOnLoadCallback(drawChart);
 });
