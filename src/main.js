@@ -14,7 +14,7 @@ const viewYearsCol = document.getElementById('calculate_years');
 
 /* Copia de la data Original*/
 const allData = injuries.changeProperty(INJURIES); // array de objetoos
-const newData = allData.slice(7, 32); // array de objetos 
+const newData = allData.slice(6, 32); // array de objetos 
 const years = injuries.filterData(newData, 'Year');
 
 /* Ocultar y mostrar pantallas */
@@ -34,7 +34,7 @@ showFilterWindow.addEventListener('click', () => {
 const showGraphics = document.getElementById('button_graficos');
 showGraphics.addEventListener('click', () => {
   document.getElementById('filtros').style.display = 'none';
-  document.getElementById('home_text_1').style.display = 'none';
+  
   document.getElementById('home_text_2').style.display = 'none';
   document.getElementById('page_five').style.display = 'none';
   const elemento = document.getElementById('graficos');
@@ -48,7 +48,6 @@ showGraphics.addEventListener('click', () => {
 const showCalculate = document.getElementById('calc');
 showCalculate.addEventListener('click', () => {
   document.getElementById('filtros').style.display = 'none';
-  document.getElementById('home_text_1').style.display = 'none';
   document.getElementById('home_text_2').style.display = 'none';
   document.getElementById('graficos').style.display = 'none';
   const elemento = document.getElementById('page_five');
@@ -59,8 +58,31 @@ showCalculate.addEventListener('click', () => {
   }
 });
 /* Fin de mostrar y ocultar pantallas */
+/* funcion para buscar en una tabla */
+/* referencia: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_table */
 
-// Funcion para mostrar cartas solo con los valores de la propiedad Year
+const inputSearch = document.getElementById('input_search');
+inputSearch.addEventListener('keyup', () => {
+  let input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById('input_search');
+  filter = input.value;
+  table = document.getElementById('table_search');
+  tr = table.getElementsByTagName('tr');
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName('td')[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.indexOf(filter) > -1) {
+        tr[i].style.display = '';
+      } else {
+        tr[i].style.display = 'none';
+      }
+    }       
+  }
+});
+/* Fin de buscador*/
+
+// Función para mostrar cartas solo con los valores de la propiedad Year
 
 const listitems = (obje, dive) => {
   let cadena = '';
@@ -142,13 +164,15 @@ btnShowYear.addEventListener('click', () => {
 });
 
 // Función para ordenar los datos por años y mostrarlos en pantalla
-
 selectDocumentOrder.addEventListener('change', () => {
-  const yearOrder = injuries.sortData(newData, event.target.value);
+  let minYear = selectDocumentMinYear.value;
+  let maxYear = selectDocumentMaxYear.value;
+  const yearOrder = injuries.sortData(newData, event.target.value, minYear, maxYear);
   const yearOrderzero = injuries.nulltozero(yearOrder);
   listitems(yearOrderzero, showTemplateData);
 });
 
+// console.log(sortData(newData, 'upward', 1990, 1994));
 
 // Función para realizar la suma total de personas heridas
 const calculateTotal = document.getElementById('calculate_total');
@@ -180,7 +204,7 @@ const showPropertyList = (array) => {
   array.forEach((ele) => {
     let ele2 = ele.replace(/_/g, ' ');
 
-    recibirArreglo += `<li><button class = "btn_graphics" value = "${ele}">${ele2}</button></li>`;
+    recibirArreglo += `<li><button class = "btn_graphics" id="btn_property" value = "${ele}">${ele2}</button></li>`;
   }); 
   return recibirArreglo;   
 };
@@ -204,6 +228,7 @@ listProperty.addEventListener('click', (event) => {
     data.addRows(arrOfArrChartsForPie); // recibe arrOfArrChart
     // Establecer opciones de gráfico
     const options = {
+      'title': 'Heridos a lo largo de los años Pie/Barras',
       'height': 500,
       'responsive': true,
       'legend': {position: 'bottom', }
