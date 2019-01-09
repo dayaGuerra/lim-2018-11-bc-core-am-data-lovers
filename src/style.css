@@ -61,7 +61,6 @@ header {
     font-size: 1.5em;
     font-weight:normal;
     font-family:'Merriweather', serif;
-  
   }
 }
 /*Fin de estilos del header*/
@@ -108,12 +107,9 @@ div.tab li a.active {
 /*Fin de estilos del main*/
 
 /*Inicio de estilos del Footer*/
-
-
 .footer {
-  position: fixed;
+  margin-top: 5%;
   left: 0;
-  bottom: 0;
   width: 100%;
   background-color: #0099cc;
   color: white;
@@ -122,8 +118,25 @@ div.tab li a.active {
 /* For mobile phones: */
 
 .filters{
-  display: block;
+  padding: 2em;
+  z-index: -1;
 }
+select{
+  margin-left: 0.5em;
+}
+span{
+  margin-left: 0.5em;
+}
+.myul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Merriweather', serif;
+  line-height: 2;
+  list-style: none;
+}
+/*Fin de estilos filtros*/
+
 @media only screen and (min-width: 600px) {
 .filters{
   display: block;
@@ -143,12 +156,39 @@ div.tab li a.active {
 /*estilo texto*/
 .paragraph{
   font-style: inherit; 
-  font-size: 0.8em; 
+  color: #5b616b;
+  font-size: 1em; 
   padding: 2%;
   text-align: justify;
+  font-family: 'Source Sans Pro', sans-serif;
   padding: 20px;
+  
+}
+h1{
+  margin-bottom: 10px;
+  border-bottom: 1px solid #112e51;
 }
 
+h1, h3{
+margin-top: 10px;
+font-family: 'Merriweather', serif;
+color: #112e51;
+
+
+}
+
+@media only screen and (min-width: 768px) {
+
+  .paragraph{
+   display:block;
+   font-style: inherit;
+   font-size: 1.2em;
+   padding: 2%;
+   text-align: justify;
+   padding: 1px 16px;
+  }
+  
+  }
 /*Fin de texto*/
 
 /*Inicio de cartas template*/
@@ -184,9 +224,10 @@ div.tab li a.active {
   font-weight:bold;
  }
  .card-year{
-  padding: 1em;
-  width: 30em;
+ padding: 1em;
+ width: 30em;
 }
+
 /*Fin de cartas template*/
 
 /*tabla*/
@@ -293,8 +334,8 @@ display:fixde;
 .btn-group {
   margin: auto;
   height: 200px;
-  /* width: 500px;
-  border: 1px solid black; */
+  width: 500px;
+  border: 1px solid black;
   overflow: auto;
 }
 
