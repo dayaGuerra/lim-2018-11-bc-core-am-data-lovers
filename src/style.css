@@ -9,7 +9,10 @@ body{
 }
 /*estilos del header*/
 header {
+  position: fixed;
+  top: 0;
   width: 100%;
+  background-color: #f1f1f1;
   /*Flex*/
   display: flex;
   flex-flow: row wrap;  
@@ -21,16 +24,11 @@ header {
   width: 100%;
   padding: 3px;
 }
+.title_header{
+  display: none;
+}
 .title_banner_header{
   font-size: 15px;
-}
-
-.title_header{
-  color:#212121;
-  font-size: 1.5em;
-  font-weight: bold;
-  font-family:'Merriweather', serif;
-
 }
 
 .img_banner{
@@ -53,6 +51,13 @@ header {
     line-height: 75px;
     padding-top: 20px;
   }
+  .title_header{
+    color:#212121;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family:'Merriweather', serif;
+  
+  }
 }
 /*Fin de estilos del header*/
 
@@ -62,6 +67,8 @@ div.tab {
   list-style-type: none;
   overflow: hidden;
   background-color: #33b5e5;
+  margin-top: 10em;
+ 
 }
 
 div.tab li {float: left;}
@@ -89,20 +96,24 @@ div.tab li a.active {
 /*Fin de estilos del nav*/
 
 /*Inicio de estilos del main*/
-
+.main_cont{
+  width: 100%;
+  height: 100%;
+}
 /*Fin de estilos del main*/
 
 /*Inicio de estilos del Footer*/
 
-.footer {
-  display:block;
-  height: 100px;
-  justify-content: space-around;
-  background-color: #0099cc;
-  color: #f1f1f1;
-  font-size: 12px;
-}
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #0099cc;
+  color: white;
+  text-align: center;
+}
 /* For mobile phones: */
 
 .filters{
@@ -130,6 +141,7 @@ div.tab li a.active {
   font-size: 0.8em; 
   padding: 2%;
   text-align: justify;
+  padding: 20px;
 }
 .paragraph_desktop {
   display: none;
@@ -144,6 +156,7 @@ div.tab li a.active {
   font-size: 1.2em; 
   padding: 2%;
   text-align: justify;
+  padding: 1px 16px;
 }
 }
 .slides_desktop{
