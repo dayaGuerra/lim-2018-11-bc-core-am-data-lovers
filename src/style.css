@@ -5,7 +5,7 @@
 }
 body{
   color: #212121;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
 }
 /*estilos del header*/
 header {
@@ -24,11 +24,10 @@ header {
   width: 100%;
   padding: 3px;
 }
-.title_header{
-  display: none;
-}
+
 .title_banner_header{
   font-size: 15px;
+  padding: 5px;
 }
 
 .img_banner{
@@ -41,7 +40,11 @@ header {
 
 }
 
-@media only screen and (min-width: 768px) {
+.title_header{
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
   header .title a{
     display:inline-flex;
     font-family: 'Merriweather', serif;
@@ -52,9 +55,11 @@ header {
     padding-top: 20px;
   }
   .title_header{
+    display:block;
+    padding: 10px;
     color:#212121;
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight:normal;
     font-family:'Merriweather', serif;
   
   }
@@ -97,8 +102,8 @@ div.tab li a.active {
 
 /*Inicio de estilos del main*/
 .main_cont{
-  width: 100%;
-  height: 100%;
+  width: 98%;
+  margin:auto;
 }
 /*Fin de estilos del main*/
 
@@ -117,7 +122,7 @@ div.tab li a.active {
 /* For mobile phones: */
 
 .filters{
-  display: none;
+  display: block;
 }
 @media only screen and (min-width: 600px) {
 .filters{
@@ -135,7 +140,7 @@ div.tab li a.active {
 
 /*- - - - - - */
 
-/*Inicio de estilo texto*/
+/*estilo texto*/
 .paragraph{
   font-style: inherit; 
   font-size: 0.8em; 
@@ -143,30 +148,7 @@ div.tab li a.active {
   text-align: justify;
   padding: 20px;
 }
-.paragraph_desktop {
-  display: none;
-}
-@media only screen and (min-width: 768px) {
-.paragraph{
-  display:none;
-}
-.paragraph_desktop{
-  display:block;
-  font-style: inherit; 
-  font-size: 1.2em; 
-  padding: 2%;
-  text-align: justify;
-  padding: 1px 16px;
-}
-}
-.slides_desktop{
-  display:none;
-}
-@media only screen and (min-width: 768px) {
-  .slides_desktop{
-    display:block;
-  }
-}
+
 /*Fin de texto*/
 
 /*Inicio de cartas template*/
@@ -175,9 +157,10 @@ div.tab li a.active {
   flex-flow: row wrap;
   justify-content: center;
   width: 100%;
+  line-height: 25px;
 }
 .prop-year {
-    border: 1px solid #797878cc;
+    padding: 10px;
     border-radius: 0.375rem;
     overflow: auto;
 }
@@ -209,14 +192,23 @@ div.tab li a.active {
 /*tabla*/
 table, td, th {  
   border: 1px solid #ddd;
-  text-align: left;
+  text-align: center;
 }
 table {
+  margin: auto;
   border-collapse: collapse;
-  width: 60%;
+  width: 70%;
 }
 th, td {
   padding: 15px;
+}
+
+.page_five_class{
+  display: none;
+}
+
+.page_five_class{
+padding: 20px;
 }
 /*Fin de css tabla*/
 
@@ -284,7 +276,8 @@ a  {
 }
 
 .graficos{
-display:block;
+display:fixde;
+
 }
 .slide_rotate{
   text-align:center;
@@ -309,4 +302,5 @@ display:block;
   width:100%; 
   text-align: center;
 }
+
 /*estilos graficos*/
