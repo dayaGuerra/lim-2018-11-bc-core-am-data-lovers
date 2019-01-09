@@ -24,29 +24,19 @@
 
 </header>  
 
-<main class = "main_content">
+<main class = "main_cont">
 <div class="row">
     
-        
-          <div class="tab ">
+    <div class="dropdown">
+        <button class="dropbtn">Right</button>
+          <div class="tab dropdown_content ">
              <li><a class="active" id="mostrar_filtros" href= "#filtros">Filtros</a></li>
              <li><a href= "#graficos" id="button_graficos">Graficos</a></li>
              <li><a href= "#page_five" id="calc">Calculo total</a></li>
              <li><a target="_blank" href= "poner un link " id="button_descargar">Más información</a></li>
-            </div> 
-        
-            <div class="paragraph_desktop" id="home_text_1">
-                    <h1>Personas heridas en U.S.</h1>
-                    <p> Para Estados Unidos, el número total de muertes es inferior a la suma de las muertes indicada para cada modo de transporte porque algunas muertes se contaron en más de un modo; es decir que dicho país corrigió la doble contabilización al calcular el total de muertes.</p>
-                    <h3>Transporte aéreo:</h3> 
-                    <p>Los datos de Estados Unidos incluyen las muertes en accidentes tanto de vuelos de pasajeros como de vuelos exclusivamente de carga, los datos de aviación comercial se refieren a muertes en accidentes de compañías aéreas nacionales tanto en vuelos domésticos como vuelos internacionales. </p> 
-                    <h3>Trasporte carretero:</h3> 
-                    <p>Los datos se refieren a ocupantes de vehículos automotores de la lista. El rubro “Otros” comprende usuarios de bicicletas y otros medios no motorizados (excepto peatones, que figuran aparte), y ocupantes de otros vehículos automotores o de clase desconocida. </p>
-                    <p>Especialmente en este modo de transporte, es importante observar que Estados computan todas las muertes atribuibles al accidente que ocurren dentro de los 30 días de sucedido éste.</p> 
-                    <h3>Transporte por agua:</h3>
-                     <p> Los datos de Estados Unidos no son comparables en varios aspectos. </p>
-                    </div>
-            
+          </div> 
+    </div>
+                        
                 <div class="paragraph" id="home_text_2">
                     <h1>Personas heridas en U.S.</h1>
                     <p>En la actualidad, muchas personas sufren accidentes en diferentes medios de transporte.</p>
@@ -55,11 +45,14 @@
                 </div>
 
                 <div id = "graficos" style="display:none;overflow: visible;">
+                    <div><h2>Tipos de accidente por años</h2>
+                    <h4>Escoge un accidente</h4></div>
                         <div class="btn-group">
                         <ul id="list_property" style="text-align: center"></ul>
                         </div>
-                     
+                        
                         <div id="piechart" class="googleCharts" ></div>
+                        
                         <div id="barchart_div" class="googleCharts"></div>
                 </div>
                 
@@ -87,12 +80,17 @@
                   </div>
            
             <div id="page_five" class="page_five_class" >
-                    <table>
-                        <thead></thead>
-                            <tr>
+               <div id="text_caption_table"> 
+                   <h2>Tabla estadistica </h2>
+                <h3>Total de personas heridas por año</h3></div>
+                    <input type="text" id="input_search"  placeholder="Buscar por años.." title="Type years">
+                    <table id="table_search">
+                        <thead>
+                            <tr class="header_table">
                             <th>Año</th>
-                            <th>Cantidad</th>
+                            <th>Total de heridos</th>
                             </tr>
+                        </thead>
                             <tbody id="calculate_years">
                             </tbody>
                             <tfoot>
@@ -111,7 +109,7 @@
         <div class="item1" id="show_template_data"></div>
 
 </main>
-
+<div></div>
 <footer class="footer ">
   <h4>Data EEUU transport Injuries</h4> 
 

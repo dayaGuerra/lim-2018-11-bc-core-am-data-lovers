@@ -3,9 +3,9 @@ require('../src/data.js');
 const input = [{Year: '1960-01-04'}, {Year: '1965-01-04'}, {Year: '1970-01-04'}];
 const output1 = [{Year: 1960}, {Year: 1965}, {Year: 1970}];
 const output2 = [1960, 1965, 1970];
-const output3 = [{Year: 1980}, {Year: 1965}, {Year: 1970}, {Year: 1965}];
-const output4 = [{Year: 1965}, {Year: 1965}, {Year: 1970}, {Year: 1980}];
-const output5 = [{Year: 1980}, {Year: 1970}, {Year: 1965}, {Year: 1965}];
+const output3 = [{Year: 1990}, {Year: 1991}, {Year: 1992}, {Year: 1993}];
+const output4 = [{Year: 1993}, {Year: 1992}, {Year: 1991}, {Year: 1990}];
+const output5 = [{Year: 1990}, {Year: 1991}, {Year: 1992}, {Year: 1993}];
 const output6 = [{'Total_Injured_Persons_Recreational_Boating': 929, 'Total_Injured_Persons_Train_Accidents_Rail_Roads': null, 'Total_Injured_Persons_Transit_Non_Rail': null, Year: 1960}];
 const output7 = [{'Total_Injured_Persons_Recreational_Boating': 929, 'Total_Injured_Persons_Train_Accidents_Rail_Roads': null, 'Total_Injured_Persons_Transit_Non_Rail': null, Year: 1960}];
 const output8 = [{'Total_Injured_Persons_Recreational_Boating': 929, 'Total_Injured_Persons_Train_Accidents_Rail_Roads': null, 'Total_Injured_Persons_Transit_Non_Rail': null, Year: 1960}, 
@@ -52,10 +52,10 @@ describe('injuries', () => {
       expect(typeof injuries.sortData).toBe('function');
     });
     it('debería de retornar un array de objetos ordenado por años ascendente', () => {
-      expect(injuries.sortData(output3, 'upward')).toEqual(output4);
+      expect(injuries.sortData(output3, 'upward', 1990, 1993)).toEqual(output5);
     });
     it('debería de retornar un array de objetos ordenado por años descentente', () => {
-      expect(injuries.sortData(output3, 'falling')).toEqual(output5);
+      expect(injuries.sortData(output3, 'falling', 1990, 1993)).toEqual(output4);
     });
   });
 
