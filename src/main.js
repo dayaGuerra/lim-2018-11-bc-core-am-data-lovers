@@ -23,6 +23,7 @@ const showFilterWindow = document.getElementById('mostrar_filtros');
 showFilterWindow.addEventListener('click', () => {
   document.getElementById('graficos').style.display = 'none';
   document.getElementById('page_five').style.display = 'none';
+  document.getElementById('home_text_2').style.display = 'none';
   const elemento = document.getElementById('filtros');
   if (elemento.style.display === 'none') {
     elemento.style.display = 'block';
@@ -34,7 +35,7 @@ showFilterWindow.addEventListener('click', () => {
 const showGraphics = document.getElementById('button_graficos');
 showGraphics.addEventListener('click', () => {
   document.getElementById('filtros').style.display = 'none';
-  
+  document.getElementById('show_template_data').style.display = 'none';
   document.getElementById('home_text_2').style.display = 'none';
   document.getElementById('page_five').style.display = 'none';
   const elemento = document.getElementById('graficos');
