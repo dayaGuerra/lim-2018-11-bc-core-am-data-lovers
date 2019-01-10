@@ -27,17 +27,18 @@
 <main class = "main_cont">
 <div class="row">
     
-    <div class="dropdown">
-        <button class="dropbtn">Right</button>
-          <div class="tab dropdown_content ">
-             <li><a class="active" id="mostrar_filtros" href= "#filtros">Filtros</a></li>
-             <li><a href= "#graficos" id="button_graficos">Graficos</a></li>
-             <li><a href= "#page_five" id="calc">Calculo total</a></li>
+   
+     
+          <div class="tab">
+             <li><a class="active" id="btn_home" href= "#home_text_2">Inicio</a></li>
+             <li><a id="mostrar_filtros">Filtros</a></li>
+             <li><a id="button_graficos">Graficos</a></li>
+             <li><a id="calc">Calculo total</a></li>
+ <!--Seccion 5 mas información-->           
              <li><a target="_blank" href= "https://www.transportation.gov/transportation-safety-institute " id="button_descargar">Más información</a></li>
           </div> 
-    </div>
-
-                           
+   
+<!--Seccion 1 parrafos-->
                 <div class="paragraph" id="home_text_2">
                         <h1>Personas heridas en U.S.</h1>
                         <p> Para Estados Unidos, el número total de muertes es inferior a la suma de las muertes indicada para cada modo de transporte porque algunas muertes se contaron en más de un modo; es decir que dicho país corrigió la doble contabilización al calcular el total de muertes.</p>
@@ -49,8 +50,8 @@
                         <h3>Transporte por agua:</h3>
                          <p> Los datos de Estados Unidos no son comparables en varios aspectos. </p>
                 </div>
-
-                <div id = "graficos" style="display:none;overflow: visible;">
+<!--Seccion 2 graficos-->
+                <div id = "graficos" class: "graphics" style="display:none;overflow: visible;">
                     <div><h2>Tipos de accidente por años</h2>
                     <h4>Escoge un accidente</h4></div>
                         <div class="btn-group">
@@ -63,7 +64,7 @@
                 </div>
                 
                 
-                      
+<!--Seccion 3 filtros-->                    
             <div id="filter_conteiner">
                     <div id = "filtros" class="filters" style="display:none">
                        <ul id="myul" class="myul">
@@ -83,31 +84,32 @@
                     </div>
                     <div class="item1" id="show_template_data"></div>
             </div>
-           
-           
-            <div id="page_five" class="page_five_class" >
-               <div id="text_caption_table"> 
+
+ <!--Seccion 4 calculos totales-->     
+            <div id="page_five" class="page_five_class table" >
+               <div id="text_caption_table" class="table"> 
                    <h2>Tabla estadistica </h2>
                 <h3>Total de personas heridas por año</h3></div>
-                    <input type="text" id="input_search"  placeholder="Buscar por años.." title="Type years">
-                    <table id="table_search">
+                    <input type="text" id="input_search" class="table" placeholder="Buscar por años.." title="Type years">
+                    <table id="table_search" class="table">
                         <thead>
-                            <tr class="header_table">
+                            <tr class="header_table table">
                             <th>Año</th>
                             <th>Total de heridos</th>
                             </tr>
                         </thead>
-                            <tbody id="calculate_years">
+                            <tbody id="calculate_years" class="table">
                             </tbody>
                             <tfoot>
                                 <tr>
                                   <th>Totales</th>
-                                  <td id = "calculate_total"></td>
+                                  <td id = "calculate_total" class="table"></td>
                                 </tr>
                               </tfoot>
                 
                           </table>
                 </div>
+<!--Seccion 5 mas información-->
         </div>
 
 </main>

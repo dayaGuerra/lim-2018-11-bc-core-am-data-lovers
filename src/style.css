@@ -7,6 +7,39 @@ body{
   color: #212121;
   background-color: #ffffff;
 }
+
+/* Bloqueo de pantallas */
+/* .btn-group {
+  display: none;
+} */
+
+.filter_conteiner {
+  display: none;
+}
+
+
+/* Inicio de mostrar pantallas */
+
+.filtros{
+  display:none
+}
+.show_template_data{
+  display:none
+}
+.home_text_2{
+  display:none
+}
+.page_five_class{
+  display:none
+}
+.graficos{
+  display:none
+}
+
+
+/* Fin de bloqueo de bantallas */
+
+
 /*estilos del header*/
 header {
   position: fixed;
@@ -226,6 +259,7 @@ color: #112e51;
  .card-year{
  padding: 1em;
  width: 30em;
+
 }
 
 /*Fin de cartas template*/
@@ -244,9 +278,6 @@ th, td {
   padding: 15px;
 }
 
-.page_five_class{
-  display: none;
-}
 
 .page_five_class{
 padding: 20px;
@@ -309,12 +340,7 @@ a  {
   display:block;
   text-decoration: none;
 }
-.tab div {
-  display: none;
-}
-.tab div:target {
-  display: block;
-}
+
 
 .graficos{
 display:fixde;

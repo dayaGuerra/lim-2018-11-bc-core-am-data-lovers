@@ -19,18 +19,17 @@ const years = injuries.filterData(newData, 'Year');
 
 /* Ocultar y mostrar pantallas */
 
-const showFilterWindow = document.getElementById('mostrar_filtros');
-showFilterWindow.addEventListener('click', () => {
+
+const btnHome = document.getElementById('btn_home');
+btnHome.addEventListener('click', () => {
+  location.reload();
   document.getElementById('graficos').style.display = 'none';
   document.getElementById('page_five').style.display = 'none';
-  document.getElementById('home_text_2').style.display = 'none';
-  const elemento = document.getElementById('filtros');
-  if (elemento.style.display === 'none') {
-    elemento.style.display = 'block';
-  } else {
-    elemento.style.display = 'none';
-  }
+  document.getElementById('filtros').style.display = 'none';
+  document.getElementById('show_template_data').style.display = 'none';
+  document.getElementById('home_text_2').style.display  = 'block'
 });
+
 
 const showGraphics = document.getElementById('button_graficos');
 showGraphics.addEventListener('click', () => {
@@ -38,27 +37,24 @@ showGraphics.addEventListener('click', () => {
   document.getElementById('show_template_data').style.display = 'none';
   document.getElementById('home_text_2').style.display = 'none';
   document.getElementById('page_five').style.display = 'none';
-  const elemento = document.getElementById('graficos');
-  if (elemento.style.display === 'none') {
-    elemento.style.display = 'block';
-  } else {
-    elemento.style.display = 'none';
-  }
+  document.getElementById('graficos').style.display = 'block'
+ 
 });
 
-const showCalculate = document.getElementById('calc');
-showCalculate.addEventListener('click', () => {
+const calculateView = document.getElementById('calc');
+calculateView.addEventListener('click', () => {
   document.getElementById('filtros').style.display = 'none';
+  document.getElementById('show_template_data').style.display = 'none';
   document.getElementById('home_text_2').style.display = 'none';
-  document.getElementById('graficos').style.display = 'none';
-  const elemento = document.getElementById('page_five');
-  if (elemento.style.display === 'none') {
-    elemento.style.display = 'block';
-  } else {
-    elemento.style.display = 'none';
-  }
+  document.getElementById('page_five').style.display = 'block';
+   document.getElementById('calculate_total').style.display = 'block';
+  document.getElementById('graficos').style.display = 'none'
+ 
 });
+
+
 /* Fin de mostrar y ocultar pantallas */
+
 /* funcion para buscar en una tabla */
 /* referencia: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_table */
 
@@ -110,6 +106,17 @@ const listitems = (obje, dive) => {
   dive.innerHTML = cadena;
 };
 
+const showFilterWindow = document.getElementById('mostrar_filtros');
+showFilterWindow.addEventListener('click', () => {
+  document.getElementById('graficos').style.display = 'none';
+  document.getElementById('page_five').style.display = 'none';
+  document.getElementById('home_text_2').style.display = 'none';
+  document.getElementById('show_template_data').style.display = 'flex';
+  document.getElementById('filtros').style.display  = 'block'
+  listitems(newData,showTemplateData);
+});
+
+
 
 // Template para colocar la tabla de cálculo
 
@@ -136,12 +143,15 @@ const showCasillasInSelect = (array) => {
   return recibirArreglo;   
 };
 
+
+
+// Funciones de filtrado
+
 selectDocumentYear.innerHTML = showCasillasInSelect(years);
 selectDocumentMinYear.innerHTML = showCasillasInSelect(years);
 selectDocumentMaxYear.innerHTML = showCasillasInSelect(years);
 
 // Mostrar cartas según la selección ingresada por el usuario
- 
 selectDocumentYear.addEventListener('change', (event) => {
   let result = injuries.strainer(newData, (parseInt(event.target.value)));
   let resultCero = injuries.nulltozero(result);
@@ -175,6 +185,11 @@ selectDocumentOrder.addEventListener('change', () => {
 
 // console.log(sortData(newData, 'upward', 1990, 1994));
 
+//  Fin de Funciones de filtrado
+
+
+
+
 // Función para realizar la suma total de personas heridas
 const calculateTotal = document.getElementById('calculate_total');
 selectDocumentCalculo.addEventListener('click', () => {
@@ -199,7 +214,6 @@ const filterProperty = (data) => {
 
 /* Función que muestra las los elementos del objeto sin el caracter /_/ subguion */
 const filterOfProperty = filterProperty(newData);
-
 const showPropertyList = (array) => {
   let recibirArreglo = '';
   array.forEach((ele) => {
