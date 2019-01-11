@@ -23,12 +23,10 @@ const btnCloseSideNav = document.getElementById('btn_close_sidenav');
 
 btnOpenSideNav.addEventListener('click', () => {
   document.getElementById('mySidenav').style.width = '250px';
-  document.getElementById('main').style.marginLeft = '250px';
 });
 
 btnCloseSideNav.addEventListener('click', () => {
   document.getElementById('mySidenav').style.width = '0';
-  document.getElementById('main').style.marginLeft = '0';
 });
 
 
