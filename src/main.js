@@ -18,6 +18,18 @@ const newData = allData.slice(6, 32); // array de objetos
 const years = injuries.filterData(newData, 'Year');
 
 /* Ocultar y mostrar pantallas */
+const btnOpenSideNav = document.getElementById('btn_open_sidenav');
+const btnCloseSideNav = document.getElementById('btn_close_sidenav');
+
+btnOpenSideNav.addEventListener('click', () => {
+  document.getElementById('mySidenav').style.width = '250px';
+  document.getElementById('main').style.marginLeft = '250px';
+});
+
+btnCloseSideNav.addEventListener('click', () => {
+  document.getElementById('mySidenav').style.width = '0';
+  document.getElementById('main').style.marginLeft = '0';
+});
 
 
 const btnHome = document.getElementById('btn_home');
@@ -27,7 +39,8 @@ btnHome.addEventListener('click', () => {
   document.getElementById('page_five').style.display = 'none';
   document.getElementById('filtros').style.display = 'none';
   document.getElementById('show_template_data').style.display = 'none';
-  document.getElementById('home_text_2').style.display  = 'block'
+  document.getElementById('btn_open_sidenav').style.display = 'none';
+  document.getElementById('home_text_2').style.display = 'block';
 });
 
 
@@ -37,8 +50,8 @@ showGraphics.addEventListener('click', () => {
   document.getElementById('show_template_data').style.display = 'none';
   document.getElementById('home_text_2').style.display = 'none';
   document.getElementById('page_five').style.display = 'none';
-  document.getElementById('graficos').style.display = 'block'
- 
+  document.getElementById('btn_open_sidenav').style.display = 'none';
+  document.getElementById('graficos').style.display = 'block';
 });
 
 const calculateView = document.getElementById('calc');
@@ -47,9 +60,11 @@ calculateView.addEventListener('click', () => {
   document.getElementById('show_template_data').style.display = 'none';
   document.getElementById('home_text_2').style.display = 'none';
   document.getElementById('page_five').style.display = 'block';
-   document.getElementById('calculate_total').style.display = 'block';
-  document.getElementById('graficos').style.display = 'none'
+  document.getElementById('graficos').style.display = 'none';
+  document.getElementById('btn_open_sidenav').style.display = 'none';
+  document.getElementById('calculate_total').style.display = 'block';
  
+
 });
 
 
@@ -112,10 +127,10 @@ showFilterWindow.addEventListener('click', () => {
   document.getElementById('page_five').style.display = 'none';
   document.getElementById('home_text_2').style.display = 'none';
   document.getElementById('show_template_data').style.display = 'flex';
-  document.getElementById('filtros').style.display  = 'block'
-  listitems(newData,showTemplateData);
+  document.getElementById('filtros').style.display = 'block';
+  document.getElementById('btn_open_sidenav').style.display = 'block';
+  listitems(newData, showTemplateData);
 });
-
 
 
 // Template para colocar la tabla de cálculo
@@ -142,7 +157,6 @@ const showCasillasInSelect = (array) => {
   }); 
   return recibirArreglo;   
 };
-
 
 
 // Funciones de filtrado
@@ -188,8 +202,6 @@ selectDocumentOrder.addEventListener('change', () => {
 //  Fin de Funciones de filtrado
 
 
-
-
 // Función para realizar la suma total de personas heridas
 const calculateTotal = document.getElementById('calculate_total');
 selectDocumentCalculo.addEventListener('click', () => {
@@ -213,7 +225,7 @@ const filterProperty = (data) => {
 };
 
 /* Función que muestra las los elementos del objeto sin el caracter /_/ subguion */
-const filterOfProperty = filterProperty(newData);
+const filterOfProperty = filterProperty(newData).slice(0, length - 1);
 const showPropertyList = (array) => {
   let recibirArreglo = '';
   array.forEach((ele) => {
@@ -246,7 +258,8 @@ listProperty.addEventListener('click', (event) => {
       'title': 'Heridos a lo largo de los años Pie/Barras',
       'height': 500,
       'responsive': true,
-      'legend': {position: 'bottom', }
+      'legend': {position: 'bottom', },
+      'backgroundColor': '#f1f1f1',
   
     };
     // Crea una instancia y dibuja nuestra gráfica, pasando algunas opciones.
