@@ -1,0 +1,95 @@
+[33mcommit 0639ba1c9207e61a3c557a4cf3ff21bab6267d80[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Fri Jan 4 06:57:27 2019 -0500
+
+    Se aplico CSS al header(color y alturas), templates(bordes, flexbox,), footer(color y altura).
+
+[33mcommit 49281304c3a3cad53d0461177dd6945b5f5d45c7[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Fri Jan 4 06:53:37 2019 -0500
+
+    Se ordenaron los codigos, se colocaron las funciones de abrir y cerrar ventana desplegable, slides de imagenes y una que esta comentada que es de busqueda.
+
+[33mcommit 7b36d35ec6154c19746165117bee1fa2f4eaf03b[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Fri Jan 4 06:51:34 2019 -0500
+
+    Actualizacion de estructura HTML, se termino de definir la presentacion de la data(cards), y se colocó una lista desplegable que contiene los filtros.
+
+[33mcommit f5f7d88a7889f3205d81a7e3596330291117df46[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Fri Jan 4 06:49:46 2019 -0500
+
+    limpiar el codigo, se añadio la función para extraer propiedades.
+
+[33mcommit 80a723f56c0e7d7d343fa2cf8ae7588b17a5e63e[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Fri Dec 21 00:36:59 2018 -0500
+
+    DOM para la función filtroMinMax
+
+[33mcommit 34a9e6b35378dca54df49f206562fbfd8285c95d[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Fri Dec 21 00:35:50 2018 -0500
+
+    estructura para imprimir el codigo en pantalla
+
+[33mcommit 6e2c3fce0a406dd0014719b5eb946b0f789b6ebd[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Fri Dec 21 00:34:44 2018 -0500
+
+    se agrego la funcion filtroMinMax(filtrar los años solicitados por el usuario)
+
+[33mcommit d9aa341168fb38242c60d3be9166193b861d8e5b[m[33m ([m[1;31morigin/gh-datalovers[m[33m, [m[1;32mgh-datalovers[m[33m)[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Thu Dec 20 20:18:54 2018 -0500
+
+    Instalación del package-lock.json
+
+[33mcommit 3c08b794fc1fe22189039c98f4991ea0f1b23e3b[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Thu Dec 20 20:17:08 2018 -0500
+
+    Se hizo el test a las tres funciones existentes en el archivo data.js (cambiarPropiedad,filtrarPropiedadEspecifica,filtro).
+
+[33mcommit c776302e62922e4319f2f8da99a72ddbbaacacf9[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Thu Dec 20 20:15:29 2018 -0500
+
+    Se añadio las grillas para la división de la data mostrada
+
+[33mcommit 98d7ab18b83e146c104ed8febffa9e21c6c3a6c0[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Thu Dec 20 20:14:01 2018 -0500
+
+    El DOM del archivo, funciones para el filtrado por año, se muestra data por año seleccionado
+
+[33mcommit 3fa3e510ad076a40e50a36f1977c7e33299962d6[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Thu Dec 20 20:12:07 2018 -0500
+
+    Estructura HTML para la iteración con el usuario, existen etiquetas comentadas
+
+[33mcommit 45e8491b7449e70e69ee3e1cc22596ddc7667c78[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Thu Dec 20 20:10:04 2018 -0500
+
+    Se añadio las funciones cambiarPropiedad (cambia el año de string a number), filtrarPropiedadEspecifica(toma propiedades que se le indica en un nuevo arreglo), filtro(filtrado por años).
+
+[33mcommit a68c6829849e2a68c4c4bb1b1c2b4b84c48dd608[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Thu Dec 20 20:05:37 2018 -0500
+
+    Se añadio reglas para el formato de los archivos JS
+
+[33mcommit 173ecf0cef9ab60b1fb92d8b671f4796b12ec2c0[m
+Author: dayaGuerra <dayamandalaman@gmail.com>
+Date:   Tue Dec 18 01:41:39 2018 -0500
+
+    JS - Funcionalidad, filtrado de datos especificos. CSS - dropdown y slidershow, se añadieron 3 imagenes (boton y SS) . Estructura HTML
+
+[33mcommit 37f900e52d9d8c2c8f893f94ba94aed3c23c5935[m
+Author: gaposx <gonzalo.p@laboratoria.la>
+Date:   Thu Dec 6 08:30:49 2018 -0500
+
+    Initial commit
