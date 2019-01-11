@@ -145,8 +145,15 @@ div.tab li a.active {
 
 /*Inicio de estilos del main*/
 .main_cont{
-  width: 98%;
+  width: 100%;
   margin:auto;
+}
+
+@media screen and (min-width: 600px) {
+  .main_cont{
+    width: 85%;
+    margin:auto;
+  }
 }
 /*Fin de estilos del main*/
 
