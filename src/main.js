@@ -1,4 +1,31 @@
 // Variables para jalar los id del HTML
+
+let allData_;
+/* Copia de la data Original*/
+fetch('https://raw.githubusercontent.com/dayaGuerra/lim-2018-11-bc-core-am-data-lovers/master/src/data/injuries/injuries.json')
+.then((response) => {
+  console.log(response);
+  
+  if (response.status === 200) {
+    return response.json();
+    // Solo si es que sabemos que la respuesta es JSON, o fallará
+  } else {
+    // Código en caso de que nos respondan con algún error
+  }
+})
+.then((respuestaJson) => {
+  console.log(respuestaJson);
+  allData_ = respuestaJson;
+  mainFunction();
+  // Código que usa el JSON
+}).catch((error) => {
+  /* Código en caso de que la llamada falle
+   * Como cuando el usuario NO tiene internet, o se haya cortado la
+   * comunicación.
+   */
+});
+
+const mainFunction = () => {
 const selectDocumentYear = document.getElementById('select_year');
 const selectDocumentMinYear = document.getElementById('select_min_year');
 const selectDocumentMaxYear = document.getElementById('select_max_year');
@@ -12,8 +39,9 @@ const viewYearsCol = document.getElementById('calculate_years');
 
 // Data del archivo data.js
 
-/* Copia de la data Original*/
-const allData = injuries.changeProperty(INJURIES); // array de objetoos
+console.log(allData_);
+
+const allData = injuries.changeProperty(allData_); // array de objetoos
 const newData = allData.slice(6, 32); // array de objetos 
 const years = injuries.filterData(newData, 'Year');
 
@@ -23,12 +51,10 @@ const btnCloseSideNav = document.getElementById('btn_close_sidenav');
 
 btnOpenSideNav.addEventListener('click', () => {
   document.getElementById('mySidenav').style.width = '250px';
-  document.getElementById('main').style.marginLeft = '250px';
 });
 
 btnCloseSideNav.addEventListener('click', () => {
   document.getElementById('mySidenav').style.width = '0';
-  document.getElementById('main').style.marginLeft = '0';
 });
 
 
@@ -193,6 +219,7 @@ selectDocumentOrder.addEventListener('change', () => {
   let minYear = selectDocumentMinYear.value;
   let maxYear = selectDocumentMaxYear.value;
   const yearOrder = injuries.sortData(newData, event.target.value, minYear, maxYear);
+  console.log(yearOrder);
   const yearOrderzero = injuries.nulltozero(yearOrder);
   listitems(yearOrderzero, showTemplateData);
 });
@@ -211,7 +238,7 @@ selectDocumentCalculo.addEventListener('click', () => {
   calculateTotal.innerHTML = calculateDataSum;
 });
 /* copia de data */
-const allDataforpie = injuries.changeProperty(INJURIES); 
+const allDataforpie = injuries.changeProperty(allData_); 
 const newDataforpie = allDataforpie.slice(6, 32);
 const listProperty = document.getElementById('list_property');
 
@@ -273,3 +300,4 @@ listProperty.addEventListener('click', (event) => {
   // Establezca una devolución de llamada para que se ejecute cuando se carga la API de visualización de Google.
   window.google.charts.setOnLoadCallback(drawChart);
 });
+};
