@@ -37,13 +37,7 @@ const computeStats = (data) => {
 // Función ordenar por año de forma ascendente y descentente
 const sortData = (data, inputUser, year1, year2) => {
   const data2 = data.slice(year1 - 1990, year2 - 1990 + 1);
-  data2.sort((year1, year2) => {
-    if (year1 > year2) {
-      return 1;
-    }
-    if (year1 < year2) {
-      return -1;
-    }
+  data2.sort(() => {
     return 0;
   });
   if (inputUser === 'falling') {

@@ -89,12 +89,7 @@ calculateView.addEventListener('click', () => {
   document.getElementById('graficos').style.display = 'none';
   document.getElementById('btn_open_sidenav').style.display = 'none';
   document.getElementById('calculate_total').style.display = 'block';
- 
-
 });
-
-
-/* Fin de mostrar y ocultar pantallas */
 
 /* funcion para buscar en una tabla */
 /* referencia: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_table */
